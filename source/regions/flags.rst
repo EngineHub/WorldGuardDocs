@@ -119,7 +119,7 @@ Overrides
     
     * 因为这样会覆盖其子域的值并且允许玩家建造！（待会会解释为什么）"
 
-Protection-Related
+有关保护的flag
 ~~~~~~~~~~~~~~~~~~
 
 .. csv-table::
