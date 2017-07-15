@@ -70,7 +70,7 @@ flag 的类型
     state, "要么是 ``allow`` 要么是 ``deny`` "
     string, "字符串，也可以理解为一句话"
     integer, "整数值"
-    double, "浮点数（也就是小数或者整数，比如4.5、2.0、3.14159等等"
+    double, "浮点数（也就是小数或者整数，比如4.5、2.0、3.14159等等）"
     location, "某个世界内的某个坐标"
     boolean, "要么是 ``True`` 要么是 ``false`` "
     set, "一个列表（或者说，词典）"
@@ -91,12 +91,12 @@ flag 的冲突
 * For state flags, if ``deny`` is present, the result is ``deny``. Otherwise, if ``allow`` is present, then the final value is ``allow``.
 * 对于其他的flag类型，冲突的结果是不确定的，所以在设置flag的时候最好头脑清楚， 如果太困了就去洗把脸再来配置，或者先睡一觉。如果对同一个地点用两个同等优先级的域设置两个不同的欢迎语，结果就会如上文所说， **无法预料** 。
 
-If a flag is not defined at all, then the default behavior is whichever is most sensible. For example, if "item pickup" is not defined, WorldGuard defaults to allowing it.
+如果某个flag为默认设置，则它的值是最符合常理的那个值，比如，当"item pickup"取默认值的时候，它的值为 *允许* 。
 
-Flag Listing
+Flag 列表
 ============
 
-Flags are broken down into categories below.
+列表将被分类。
 
 Overrides
 ~~~~~~~~~
@@ -105,16 +105,19 @@ Overrides
     :header: Flag, Type, description
     :widths: 10, 5, 30
 
-    passthrough,state,"This flag is short for 'passthrough build'. It has nothing to do with movement.
+    passthrough,state,"这个flag是 *passthrough build* 的缩写，与能不能进入某区域没有关系。
 
-    * If not set **(default)**, then the region protects it area.
-    * If set to ``deny``, then the region protects its area.
-    * If set to ``allow``, then the region **no longer** protects its area.
+    * 默认值等同于 ``deny``；
+    * 如果设置为 ``deny``，则区域保护开启，区域内的方块不能被更改；
+    * 如果设置为 ``allow``，则区域保护关闭。
 
-    Where does the flag come into use?
+    这个flag拿来有什么用？
 
-    * When you are using other flags (PvP, healing, etc.) and you don't want to prevent building.
-    * Why not set ``build`` to ``allow`` (explained later) instead? That would override other regions and let people build!"
+    * 当你在同时使用其他flag（比如PvP、healing之类的）并且不希望区域保护开启的时候就应该把 ``passthrough`` 设为 ``allow`` 
+    
+    为什么要用 passthrough 而不是把 ``build`` 设为 ``deny``？
+    
+    * 因为这样会覆盖其子域的值并且允许玩家建造！（待会会解释为什么）"
 
 Protection-Related
 ~~~~~~~~~~~~~~~~~~
