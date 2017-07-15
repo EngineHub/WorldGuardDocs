@@ -156,9 +156,10 @@ Overrides
     lighter,state,是否能使用打火石
 
 .. warning::
-    None of these flags are player-specific. For example, the block-break flag, if set to deny, **prevents pistons from breaking blocks**.
+    这些flag不只对玩家有效，举个例子，``block-break``这个flag如果被设置成``deny``，那么就连活塞也无法破坏方块！
 
-    To understand why, consider the fact that players can fling TNT into a region from outside, or a player can build an inchworm piston machine that moves into another region. While these actions were caused by a player, realistically attempting to figure which player built the TNT cannon or used it is much more difficult. However, you still want to prevent someone from blowing up spawn with a TNT cannon.
+    为了理解为什么要这么设计，你可以想一想，坏蛋可以把一个TNT用红石大炮从区域的外面抛到区域内来破坏你的建筑，就算你禁止了TNT爆炸，坏蛋依然可以造一台活塞蠕虫（指的是能自己推动自己向前走的机器，以活塞和红石为主要元件）来破坏你领地内的建筑。
+    To understand why, consider the fact that players can fling TNT into a region from outside, or a player can build an inchworm piston machine that moves into another region. While these actions were caused by a player, realistically attempting to figure which player built the TNT cannon or used it is much more difficult. However, you still want to prevent someone from blowing up spawn with a TNT cannon.
 
     Outright blocking TNT cannons or pistons is the wrong solution. Pistons and TNT cannons should be allowed in *some* cases. For example, a TNT cannon or piston inside should work *within* the region.
 
