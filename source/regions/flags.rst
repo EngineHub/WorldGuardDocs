@@ -10,7 +10,7 @@ Region Flags
 * 用 ``receive-chat`` 阻止某区域内的玩家接收消息
 * 用 ``vine-growth`` 停止藤曼的生长
 
-一个区域可以有很多个不同的flag被设置，但是每个flag只能设置为一个确定的值。用``/region flag``命令来设置区域的flag，以下是一些例子::
+一个区域可以有很多个不同的flag被设置，但是每个flag只能设置为一个确定的值。用 ``/region flag`` 命令来设置区域的flag，以下是一些例子::
 
     /region flag spawn pvp deny
     /region flag spawn greeting Welcome to spawn!
@@ -24,12 +24,12 @@ Region Flags
 
     /region info spawn
 
-.. _region-groups:
+.. _组:
 
-Region Groups
+组
 =============
 
-Sometimes, it may be desired for a flag to only apply to a certain group of players rather than everyone that should enter the region. This can be achieved by specifying an additional "region group" when defining the flag, of which there are several options:
+有时候，你希望某一个flag只对某一组玩家生效，而不是所有进入此区域的玩家；这可以通过在设置flag时指定一个组达到。组的列表如下：
 
 * all (everyone)
 * members
@@ -37,11 +37,19 @@ Sometimes, it may be desired for a flag to only apply to a certain group of play
 * nonmembers
 * nonowners
 
-The group can be specified using the ``-g`` marker as illustrated below::
+即
+
+* 所有人
+* 区域成员
+* 区域主人
+* 非区域成员
+* 非区域主人
+
+当设置flag时，使用 ``-g`` 参数来指定组，例如::
 
     /region flag spawn -g nonmembers pvp deny
 
-It is **not** possible to set the same flag to different values for more than one group on the same region. If you need that functionality, consider making several regions.
+你**不能**在同一个区域内为不同的组的同一个flag设置不同的值，如果你想要那样设置，可以考虑创建多个子域。
 
 .. note::
     When there are multiple overlapping regions, a player must be a member of the region *on which the flag is set* or *on one of the region's child regions* (when region inheritance is involved). This is explained further in :doc:`priorities`.
