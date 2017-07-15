@@ -1,8 +1,8 @@
-# WorldGuard Documentation
+# WorldGuard 文档
 
-These are the files for WorldGuard's documentation.
+这里是 WorldGuard 插件的官方文档
 
-Contributions are welcome. Please read the licensing information below.
+欢迎贡献翻译或修改。请仔细阅读以下的协议
 
 ## License
 
