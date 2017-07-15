@@ -24,7 +24,7 @@ Region Flags
 
     /region info spawn
 
-.. _组:
+.. 组:
 
 组
 =============
@@ -49,7 +49,7 @@ Region Flags
 
     /region flag spawn -g nonmembers pvp deny
 
-你**不能**在同一个区域内为不同的组的同一个flag设置不同的值，如果你想要那样设置，可以考虑创建多个子域。
+你 **不能** 在同一个区域内为不同的组的同一个flag设置不同的值，如果你想要那样设置，可以考虑创建多个子域。
 
 .. note::
     When there are multiple overlapping regions, a player must be a member of the region *on which the flag is set* or *on one of the region's child regions* (when region inheritance is involved). This is explained further in :doc:`priorities`.
