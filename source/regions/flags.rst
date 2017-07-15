@@ -11,7 +11,6 @@ Region Flags
 * 用 ``vine-growth`` 停止藤曼的生长
 
 一个区域可以有很多个不同的flag被设置，但是每个flag只能设置为一个确定的值。用``/region flag``命令来设置区域的flag，以下是一些例子：
-A region can have several different flags set at one time, although a certain flag can only have one value at a time. Flags are defined using the ``/region flag`` command, as illustrated below for the "spawn" region and "hospital" regions::
 
     /region flag spawn pvp deny
     /region flag spawn greeting Welcome to spawn!
