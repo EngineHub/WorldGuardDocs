@@ -126,34 +126,34 @@ Overrides
     :header: Flag, Type, description
     :widths: 10, 5, 30
 
-    build,state,"Everything:
+    build,state,"这是总开关，可以控制:
 
-    * Whether blocks can be mined or placed
-    * Whether doors, levers, etc. (but not inventories) can be used
-    * Whether entities and blocks can be interacted with
-    * Whether player versus player combat is permitted
-    * Whether sleeping in a bed is permitted
-    * Whether inventories can be accessed
-    * Whether vehicles (boats, minecarts) can be placed
-    * etc."
-    interact,state,"Everything that involves 'using' a block or entity:
+    * 方块能不能被破坏或者放置
+    * 门、拉杆、压力板等等物品能否被使用
+    * 实体或者方块能否与你互动（比如骑马、和村民交易等）
+    * 是否允许PvP
+    * 是否能在床上睡觉
+    * 是否能开启箱子（包括箱子、陷阱箱、末影箱）
+    * 是否能放置载具（船、矿车）
+    * 等等"
+    interact,state,"包括所有“使用”物品或实体的选项:
 
-    * Whether doors, levers, etc. (but not inventories) can be used
-    * Whether inventories can be accessed
-    * Whether vehicles (including animals) can be mounted
-    * etc."
-    block-break,state,Whether blocks can be mined
-    block-place,state,Whether blocks can be placed
-    use,state,"Whether doors, levers, etc. (but not inventories) can be used"
-    damage-animals,state,"Whether players can harm friendly animals (cows, sheep, etc)"
-    chest-access,state,Whether inventories can be accessed
-    ride,state,Whether vehicles (including animals) can be mounted
-    pvp,state,Whether player versus player combat is permitted
-    sleep,state,Whether sleeping in a bed is permitted
-    tnt,state,Whether TNT detonation or damage is permitted
-    vehicle-place,state,"Whether vehicles (boats, minecarts) can be placed"
-    vehicle-destroy,state,Whether vehicles can be destroyed
-    lighter,state,Whether flint and steel can be used
+    * 门、拉杆、压力板等等物品能否被使用
+    * 是否能开启箱子
+    * 是否能使用载具（包括动物）
+    * 等等"
+    block-break,state,是否能破坏方块
+    block-place,state,是否能放置方块
+    use,state,"是否能使用门、拉杆等物品（不包括箱子）"
+    damage-animals,state,"玩家是否能伤害友善的动物"
+    chest-access,state,箱子是否能开启
+    ride,state,"是否能使用载具（包括动物）"
+    pvp,state,"是否允许PvP"
+    sleep,state,是否允许使用床
+    tnt,state,是否允许使用TNT
+    vehicle-place,state,"载具是否能被放置（比如矿车、船）"
+    vehicle-destroy,state,是否能破坏载具
+    lighter,state,是否能使用打火石
 
 .. warning::
     None of these flags are player-specific. For example, the block-break flag, if set to deny, **prevents pistons from breaking blocks**.
