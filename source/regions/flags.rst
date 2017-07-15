@@ -2,14 +2,15 @@
 Region Flags
 ============
 
-Regions can have flags set upon it. Some uses of flags include:
+每个区域都可以有不同的flag设置，其中一些flag的用途包括：
 
-* Blocking player versus combat with the ``pvp`` flag
-* Denying entry to a region using the ``entry`` flag
-* Disabling the melting of snow using the ``snow-melt`` flag
-* Blocking players within the region from receiving chat using the ``receive-chat`` flag
-* Halting the growth of vines by using the ``vine-growth`` flag
+* 用 ``pvp`` 来阻止玩家之间的战斗
+* 用 ``entry`` 来阻止其他玩家进入你的领地（区域）
+* 用 ``snow-melt`` 来禁用雪融化
+* 用 ``receive-chat`` 阻止某区域内的玩家接收消息
+* 用 ``vine-growth`` 停止藤曼的生长
 
+一个区域可以有很多个不同的flag被设置，但是每个flag只能设置为一个确定的值。用``/region flag``命令来设置区域的flag，以下是一些例子：
 A region can have several different flags set at one time, although a certain flag can only have one value at a time. Flags are defined using the ``/region flag`` command, as illustrated below for the "spawn" region and "hospital" regions::
 
     /region flag spawn pvp deny
