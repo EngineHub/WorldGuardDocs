@@ -10,17 +10,17 @@ Region Flags
 * 用 ``receive-chat`` 阻止某区域内的玩家接收消息
 * 用 ``vine-growth`` 停止藤曼的生长
 
-一个区域可以有很多个不同的flag被设置，但是每个flag只能设置为一个确定的值。用``/region flag``命令来设置区域的flag，以下是一些例子：
+一个区域可以有很多个不同的flag被设置，但是每个flag只能设置为一个确定的值。用``/region flag``命令来设置区域的flag，以下是一些例子::
 
     /region flag spawn pvp deny
     /region flag spawn greeting Welcome to spawn!
     /region flag hospital heal-amount 2
 
-Remove a flag by not specifying a value::
+不给flag指定任何值可以把flag恢复成默认值::
 
     /region flag spawn pvp
 
-List flags by using the "info" command::
+用"info"命令来列出已设置的flag::
 
     /region info spawn
 
