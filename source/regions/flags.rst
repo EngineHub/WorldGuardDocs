@@ -68,28 +68,28 @@ flag 的类型
     :widths: 5, 30
 
     state, "要么是 ``allow`` 要么是 ``deny`` "
-    string, "Any form of text"
-    integer, "A number that does not have decimals (5, but not 5.5)"
-    double, "Numbers that may have decimals (5, 5.5, 2.425)"
-    location, "A location in a world"
-    boolean, "True or false"
-    set, "A list of unique entries"
+    string, "字符串，也可以理解为一句话"
+    integer, "整数值"
+    double, "浮点数（也就是小数或者整数，比如4.5、2.0、3.14159等等"
+    location, "某个世界内的某个坐标"
+    boolean, "要么是 ``True`` 要么是 ``false`` "
+    set, "一个列表（或者说，词典）"
 
-Internally, there are more types, but it should generally not be of concern.
+实际上，还有很多种类型，但是使用除了上面表格内列出的类型之外的类型可能导致插件无法正常运作。
 
-Conflicting Flags
+flag 的冲突
 =================
 
-Sometimes, a certain location may have multiple overlapping regions with different values for the same flag. The following rules are used to determine which values are selected:
+有时候，一个位置可能会有几个重叠的域，每个域对同一个flag有不同的设置，这就是flag冲突。以下的规则可以用来帮你确定插件将会取的值：
 
-* Regions will inherit the value of a flag from its parent, **if** the region did not have the flag set. 
-* Higher priority regions will override lower-priority regions.
-* The global region is considered like any other region, except it is at the lowest possible priority.
+* 当子域的flag未被设置，且其父域对应的flag有设置，那么子域将从其父域那里继承这个flag的值；
+* 高优先级的域的设置将会覆盖低优先级的域的设置；
+* 全局域拥有最低的优先级，除此之外，他和普通域没什么区别。
 
-However, it is still possible for there to be conflicting flag values even after that process. Imagine two different regions at the same priority, for example. At that point, the value of the flag is decided differently depending on the type of flag:
+然而，即使有这些规则，flag冲突依然有可能会在两个重叠区域拥有同等优先级时发生。此时某些特定类型的flag可以拥有确定的取值：
 
 * For state flags, if ``deny`` is present, the result is ``deny``. Otherwise, if ``allow`` is present, then the final value is ``allow``.
-* For other flags, the result is not defined. For that reason, do not, for example, set two different greeting messages in the same area with the same priority.
+* 对于其他的flag类型，冲突的结果是不确定的，所以在设置flag的时候最好头脑清楚， 如果太困了就去洗把脸再来配置，或者先睡一觉。如果对同一个地点用两个同等优先级的域设置两个不同的欢迎语，结果就会如上文所说， **无法预料** 。
 
 If a flag is not defined at all, then the default behavior is whichever is most sensible. For example, if "item pickup" is not defined, WorldGuard defaults to allowing it.
 
