@@ -55,18 +55,19 @@ Region Flags
     When there are multiple overlapping regions, a player must be a member of the region *on which the flag is set* or *on one of the region's child regions* (when region inheritance is involved). This is explained further in :doc:`priorities`.
 
 .. tip::
-    The entry and exit flags default to "non-member", meaning setting them to "deny" will prevent non-members from entering/exiting the region. The teleport and spawn location flags default to "members", which means that only members can take advantage of them by default. All other flags provided by WorldGuard default to "everyone".
+    *entry* 和 *exit* 两个flag的默认组是 "non-member"，也就是说，当你把这两个flag设置为 "deny" 的时候它将会阻止非区域成员进入/离开区域。 *teleport* 和 *spawn* 两个flag的默认组是 "members"，也就是说，只有区域成员能使用他们。其余的flag默认组都是 "everyone"。
 
-Types of Flags
+
+flag 的类型
 ==============
 
-Each flag is of a certain type that determines what kind of values it may take. For example, the *heal-amount* flag is an numeric flag, so you can only set numeric values for it.
+每一个flag都有特定的类型来规定它能取什么样的值。比如说， *heal-amount* 这个flag是一个只能填入数值的flag。
 
 .. csv-table::
-    :header: Type, Kind of values
-    :widths: 5, 30
+    :header: 类型, 描述
+    :widths: 5, 30
 
-    state, "Either 'allow' or 'deny' (explained later)"
+    state, "要么是 ``allow`` 要么是 ``deny`` "
     string, "Any form of text"
     integer, "A number that does not have decimals (5, but not 5.5)"
     double, "Numbers that may have decimals (5, 5.5, 2.425)"
