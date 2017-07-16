@@ -158,20 +158,20 @@ Overrides
 .. warning::
     这些flag不只对玩家有效，举个例子，``block-break``这个flag如果被设置成``deny``，那么就连活塞也无法破坏方块！
 
-    为了理解为什么要这么设计，你可以想一想，坏蛋可以把一个TNT用红石大炮从区域的外面抛到区域内来破坏你的建筑，就算你禁止了TNT爆炸，坏蛋依然可以造一台活塞蠕虫（指的是能自己推动自己向前走的机器，以活塞和红石为主要元件）来破坏你领地内的建筑。
-    To understand why, consider the fact that players can fling TNT into a region from outside, or a player can build an inchworm piston machine that moves into another region. While these actions were caused by a player, realistically attempting to figure which player built the TNT cannon or used it is much more difficult. However, you still want to prevent someone from blowing up spawn with a TNT cannon.
+    为了理解为什么要这么设计，你可以想一想，坏蛋可以把一个TNT用红石大炮从领域的外面抛到领域内来破坏你的建筑，就算你禁止了TNT爆炸，坏蛋依然可以造一台活塞蠕虫（指的是能自己推动自己向前走的机器，以活塞和红石为主要元件）来破坏你领域内的建筑。要想追踪到是哪个玩家造了这个TNT大炮是十分困难的。
 
-    Outright blocking TNT cannons or pistons is the wrong solution. Pistons and TNT cannons should be allowed in *some* cases. For example, a TNT cannon or piston inside should work *within* the region.
+    彻底禁止TNT爆炸或者彻底禁止活塞的工作并不是一个解决办法，或者甚至可以说是“懒政”“一刀切”之类的。红石和TNT在许多情况下是非常有用的工具，有时你甚至希望在你的领域内放置一个红石活塞门，这就要求活塞能在领域内工作。
 
-    First off, remember who can build in regions: it's **not** players, it's **members**. When we consider pistons or TNT, it should be no different. How does WorldGuard figure out whether a piston machine or TNT cannon is a member of a region? **If it's inside the region,** of course!
+    首先，记住谁能在领域内建造：**并不是** 玩家，而是 **成员**！成员与非成员放置的TNT或者活塞并无区别，那么 WorldGuard 是怎么区分它是成员建造的还是非成员建造的呢？Bingo~ **成员能在领域内建造，非成员不能！**
+    
+    当你创建一个新的区域而还没有给它设置任何flag的时候：
 
-    When you create a region, before setting any flags on it:
+    * 领域成员可以建造
+    * 非领域成员 **无法** 建造
 
-    * Members may build
-    * Non-members may **not** build
-
-    TNT cannons and pistons inside are allowed to work because they are "members." An imaginary player, "Bobby," who isn't a member yet, is unable to place or break blocks. Once you add Bobby to the region, then Bobby can build.
-
+    在领域内部的TNT大炮和活塞应该要能正常工作，因为它们是“领域成员”。
+    现在想象一下一个新的玩家，Bobby。Bobby还不是领域的成员，所以他无法在领域内放置或摧毁任何方块，当你让他成为了领域的成员之后，他就拥有了建造的权限。
+    
     When you set the protection flags, you override this behavior. If you set ``block-break`` to ``deny``, then even members are unable to break blocks. Bobby cannot break blocks. A TNT cannon inside cannot break blocks. A piston inside cannot break blocks. **You break pistons.**
 
     That begs two questions:
