@@ -177,61 +177,62 @@ Overrides
     这就带来了两个问题：
     
     * **我要如何阻止玩家破坏我领域内的方块？** 什么都不要做，创建了你的领域之后，保持所有的flag都是默认值。
-    * **我要怎么设置才能让这些flag只对玩家有效？** 你的问题应该是：“我要怎么设置才能让这些flag只对 **非领域成员** 有效？”嗯……这其实很简单啦，你可以回头去看看 组_ 。
+    * **我要怎么设置才能让这些flag只对玩家有效？** 你的问题应该是：“我要怎么设置才能让这些flag只对 **非领域成员** 有效？”嗯……这其实很简单啦，你可以回头去看看 组_。
 
 .. tip::
     
-    提示：即使 ``build`` 设置为 ``allow`` 或者 ``deny`` ，它依然会被这个分类下的其他flag覆盖（比如``block-break``、``interact``）。
-    
-Mobs, Fire, and Explosions
+    提示：即使 ``build`` 设置为 ``allow`` 或者 ``deny``，它依然会被这个分类下的其他flag覆盖（比如 ``block-break``、``interact``）。
+    
+怪物、火焰和爆炸
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. csv-table::
     :header: Flag, Type, description
     :widths: 10, 5, 30
 
-    creeper-explosion,state,Whether creepers can do damage
-    enderdragon-block-damage,state,Whether enderdragons can do block damage
-    ghast-fireball,state,Whether ghast fireballs can do damage
-    other-explosion,state,Whether explosions can do damage
-    fire-spread,state,Whether fire can spread
-    enderman-grief,state,Whether endermen will grief
-    mob-damage,state,Whether mobs can hurt players
-    mob-spawning,state,Whether mobs can spawn
-    deny-spawn,set of entity types,A list of entity types that cannot spawn
-    entity-painting-destroy,state,Whether non-player entities can destroy paintings
+    creeper-explosion,state,苦力怕爆炸是否破坏方块
+    enderdragon-block-damage,state,末影龙是否能破坏方块
+    ghast-fireball,state,恶魂是否能破坏方块
+    other-explosion,state,爆炸是否能破坏方块
+    fire-spread,state,火焰是否会扩散
+    enderman-grief,state,末影人是否会偷方块
+    mob-damage,state,怪物是否会伤害玩家
+    mob-spawning,state,怪物是否会生成
+    deny-spawn,set of entity types,一个被阻止生成的怪物的列表
+    entity-painting-destroy,state,Whether non-player entities can destroy paintings
     entity-item-frame-destroy,state,Whether non-player entities can destroy item frames
 
-.. topic:: Example: Preventing sheep and cows from spawning at spawn
+.. topic:: 例：在出生点阻止牛和猪生成
 
-    The entity types must be specified::
+    需要指定实体的列表 ::
 
         /rg flag spawn deny-spawn cow,pig
 
-Natural Events
+自燃事件
 ~~~~~~~~~~~~~~
 
 .. csv-table::
     :header: Flag, Type, description
     :widths: 10, 5, 30
 
-    lava-fire,state,Whether lava can start fires
-    lightning,state,Whether lightning can strike
-    water-flow,state,Whether water can flow
-    lava-flow,state,Whether lava can flow
-    snow-fall,state,Whether snow will fall
-    snow-melt,state,Whether snow will melt
-    ice-form,state,Whether ice will form
-    ice-melt,state,Whether ice will melt
-    mushroom-growth,state,Whether mushrooms will grow
-    leaf-decay,state,Whether leaves will decay
-    grass-growth,state,Whether grass will grow
-    mycelium-spread,state,Whether mycelium will spread
-    vine-growth,state,Whether vines will grow
-    soil-dry,state,Whether soil will dry
+    lava-fire,state,岩浆是否能引起火焰
+    lightning,state,闪电是否能击中区域内方块
+    water-flow,state,水是否能流动
+    lava-flow,state,岩浆是否能流动
+    snow-fall,state,是否会下雪
+    snow-melt,state,雪是否会融化
+    ice-form,state,是否会结冰
+    ice-melt,state,冰是否会融化
+    mushroom-growth,state,蘑菇是否会长大
+    leaf-decay,state,树叶是否会枯萎
+    grass-growth,state,草是否会长出来
+    mycelium-spread,state,蘑菇是否会扩散
+    vine-growth,state,藤曼是否会成长 
+    soil-dry,state,土壤是否会变干
 
 .. warning::
-    The ``fire-spread``, ``water-flow`` and ``liquid-flow`` flags require that the "high frequency flags" option be enabled in the :doc:`configuration <../config>`. This is because these events can be very frequent, requiring more region lookups, and potentially slowing down your server (or at least warming the server room a bit more).
+    ``fire-spread``，``water-flow`` 和 ``lava-flow`` 这三个flag需要打开 doc:`configuration <../config>` 里的 "high frequency flags" 选项，因为这三个事件可能会更新得非常频繁，并且需要更多的region查询，可能会导致服务器卡顿（至少会使你的服务器机房变得更热）。
+    The ``fire-spread``, ``water-flow`` and ``liquid-flow`` flags require that the "high frequency flags" option be enabled in the :doc:`configuration <../config>`. This is because these events can be very frequent, requiring more region lookups, and potentially slowing down your server (or at least warming the server room a bit more).
 
 Map Making
 ~~~~~~~~~~
