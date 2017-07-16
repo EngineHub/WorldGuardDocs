@@ -275,13 +275,17 @@ Map Making
 
 .. topic:: 例：在出生点禁用 "/tp" 和 "/teleport" 两个命令： ::
 
+
         /rg flag spawn blocked-cmds /tp,/teleport
+
 
 .. topic:: 例：禁止非成员进入 "secret_club" 区域：
     
     关键是设置 region group 为 "nonmembers"::
 
-        /rg flag secret_club entry -g nonmembers deny
+
+    /rg flag secret_club entry -g nonmembers deny
+
 
 .. topic:: 在一个“医院”区域内，每秒给玩家恢复一颗心的血量，直到达到玩家最大血量的一半：
     
