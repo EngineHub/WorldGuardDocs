@@ -24,7 +24,7 @@ Region Flags
 
     /region info spawn
 
-.. 组:
+.. region-groups:
 
 组
 =============
@@ -176,7 +176,7 @@ Overrides
 
     这就带来了两个问题：
     * **我要如何阻止玩家破坏我领域内的方块？** 什么都不要做，创建了你的领域之后，保持所有的flag都是默认值。
-    * **我要怎么设置才能让这些flag只对玩家有效？** 你的问题应该是：“我要怎么设置才能让这些flag只对 **非领域成员** 有效？”嗯……这其实很简单啦，你可以回头去看看 :ref:`组`。
+    * **我要怎么设置才能让这些flag只对玩家有效？** 你的问题应该是：“我要怎么设置才能让这些flag只对 **非领域成员** 有效？”嗯……这其实很简单啦，你可以回头去看看 :ref:`region-groups`。
 
 .. tip::
     Note: If the ``build`` flag is set to ``allow`` or ``deny``, it can still be overriden with a different flag (``block-break``, ``interact``, etc.). This is only the case with the build flag.
