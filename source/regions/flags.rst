@@ -232,8 +232,7 @@ Overrides
 
 .. warning::
     ``fire-spread``，``water-flow`` 和 ``lava-flow`` 这三个flag需要打开 :doc:`configuration <../config.rst>` 里的 "high frequency flags" 选项，因为这三个事件可能会更新得非常频繁，并且需要更多的region查询，可能会导致服务器卡顿（至少会使你的服务器机房变得更热）。
-    The ``fire-spread``, ``water-flow`` and ``liquid-flow`` flags require that the "high frequency flags" option be enabled in the :doc:`configuration <../config>`. This is because these events can be very frequent, requiring more region lookups, and potentially slowing down your server (or at least warming the server room a bit more).
-
+    
 Map Making
 ~~~~~~~~~~
 
@@ -254,68 +253,64 @@ Map Making
     game-mode,gamemode,"当玩家进入区域时应用的游戏模式 (survival, creative, adventure)"
     time-lock,integer,"玩家在region内看到的游戏时间，用tick来表示 (between 0 and 24000)；或者用“+”或者“-”来调整为相对于region外的时间调快/慢多少tick"
     weather-lock,weather,"玩家在区域内看到的天气。这不会影响区域外的天气。有效的值有 ``downfall`` （下雨）和 ``clear`` （晴天）"
-    heal-delay,integer,The number of seconds between heals (if ``heal-amount`` is set)
-    heal-amount,integer,The amount of half hearts to heal (...or hurt if negative) the player at the rate of ``heal-delay``
-    heal-min-health,double,The minimum number of half hearts that damage (via ``heal-amount``) will not exceed
-    heal-max-health,double,The maximum number of half hearts that healing (via ``heal-amount``) will not exceed
-    feed-delay,integer,"See equivalent heal flag, except this is for food"
-    feed-amount,integer,"See equivalent heal flag, except this is for food"
-    feed-min-hunger,integer,"See equivalent heal flag, except this is for food"
-    feed-max-hunger,integer,"See equivalent heal flag, except this is for food"
-    teleport,location,The location to teleport to when the ``/rg teleport`` command is used within the region
-    spawn,location,The location to teleport to when a player dies within the region
-    blocked-cmds,set of strings,A list of commands to block
-    allowed-cmds,set of strings,A list of commands to permit
+    heal-delay,integer,"两次回血之间间隔的时间(假如设置了 ``heal-amount`` 的话)"
+    heal-amount,integer,"每次回血恢复多少个“半格” (...如果设置为负数则会掉血)"
+    heal-min-health,double,"血量少于多少个“半格”之后不再掉血（ ``heal-amount`` 为负数时）"
+    heal-max-health,double,"血量大于多少个“半格”之后不再回血（ ``heal-amount`` 为正数时）"
+    feed-delay,integer,"与 ``heal-*`` 类似，只不过这里是恢复饥饿值"
+    feed-amount,integer,"同上"
+    feed-min-hunger,integer,"同上"
+    feed-max-hunger,integer,"同上"
+    teleport,location,"当玩家使用 ``/rg teleport`` 的时候将玩家传送到此区域的什么位置"
+    spawn,location,"当玩家在区域内死亡并且复活之后将玩家传送到此区域的什么位置"
+    blocked-cmds,set of strings,"一个在区域内不允许使用的命令的列表"
+    allowed-cmds,set of strings,"一个在区域内允许使用的命令的列表"
 
 .. warning::
-    The healing, feeding, greeting, and farewell message flags require that the "use player move event" option **not** be disabled in the :doc:`configuration <../config>`.
+    *healing、feeding、greeting、farewell* 四个flag需要启用 :doc:`configuration <../config.rst>`里的"use player move event"（默认为启用）。
 
-.. topic:: Example: Changing the message players receive when an action they try is blocked
-    
-    Set the ``deny-message`` flag::
+.. topic:: 例：改变一个玩家的操作被禁止时收到的消息： ::
 
         /rg flag spawn deny-message Sorry! You are at spawn. If you want to find a place to call home, use the rail station to leave spawn.
 
-.. topic:: Example: Blocking the "/tp" and "/teleport" commands at spawn
-    
-    The commands in question can be blocked with::
+.. topic:: 例：在出生点禁用 "/tp" 和 "/teleport" 两个命令： ::
 
         /rg flag spawn blocked-cmds /tp,/teleport
 
-.. topic:: Example: Preventing non-members of a "secret_club" region from entering it
-    
-    The key is to set the region group to "nonmembers"::
+.. topic:: 例：禁止非成员进入 "secret_club" 区域：
+    
+    关键是设置 region group 为 "nonmembers"::
 
         /rg flag secret_club entry -g nonmembers deny
 
-.. topic:: Example: In a "hospital" region, heal players one heart every second up to half their health bar
-    
-    Without any buffs, the player's maximum health is 20, so 10 is half of that::
+.. topic:: 在一个“医院”区域内，每秒给玩家恢复一颗心的血量，直到达到玩家最大血量的一半：
+    
+    没有任何加成的时候，玩家的最大血量为20，它的一半就是10 ::
 
         /rg flag hospital heal-amount 2
         /rg flag hospital heal-max-health 10
 
-Miscellaneous
+其他的
 ~~~~~~~~~~~~~
 
 .. csv-table::
     :header: Flag, Type, description
     :widths: 10, 5, 30
 
-    pistons,state,Whether pistons can be used
-    send-chat,state,Whether players can send chat
-    receive-chat,state,Whether players can receive chat
-    potion-splash,state,Whether potions can have splash effects
-    notify-enter,boolean,Whether players with the ``worldguard.notify`` permission are notified when another player enters the region
-    notify-leave,boolean,Whether players with the ``worldguard.notify`` permission are notified when another player leaves the region
+    pistons,state,活塞是否能使用
+    send-chat,state,玩家是否能发送消息
+    receive-chat,state,玩家是否能接收消息
+    potion-splash,state,药水是否有喷溅效果
+    notify-enter,boolean,"当有其他玩家进入你的领域的时候是否给你发送提醒（需要 ``worldguard.notify`` 权限"
+    notify-leave,boolean,"当有其他玩家离开你的领域的时候是否给你发送提醒（需要 ``worldguard.notify`` 权限"
 
-Unused
-~~~~~~
+不再使用的
+~~~~~~~~~~~~~~~~
 
 .. csv-table::
     :header: Flag, Type, description
     :widths: 10, 5, 30
 
-    allow-shop,state,"Not used by WorldGuard at this time, but third-party plugins may use it"
-    buyable,boolean,"Not used by WorldGuard at this time, but third-party plugins may use it"
-    price,double,"Not used by WorldGuard at this time, but third-party plugins may use it"
+    allow-shop,state,"WorldGuard 已经不再使用这个flag，但是其他的插件可能需要使用"
+    buyable,boolean,"WorldGuard 已经不再使用这个flag，但是其他的插件可能需要使用"
+    price,double,"WorldGuard 已经不再使用这个flag，但是其他的插件可能需要使用"
