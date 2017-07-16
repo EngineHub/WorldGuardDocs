@@ -156,9 +156,9 @@ Overrides
     lighter,state,是否能使用打火石
 
 .. warning::
-    这些flag不只对玩家有效，举个例子，``block-break``这个flag如果被设置成``deny``，那么就连活塞也无法破坏方块！
+    这个分类的所有flag都不只对玩家有效，举个例子，``block-break``这个flag如果被设置成``deny``，那么就连活塞也无法破坏方块！
 
-    为了理解为什么要这么设计，你可以想一想，坏蛋可以把一个TNT用红石大炮从领域的外面抛到领域内来破坏你的建筑，就算你禁止了TNT爆炸，坏蛋依然可以造一台活塞蠕虫（指的是能自己推动自己向前走的机器，以活塞和红石为主要元件）来破坏你领域内的建筑。要想追踪到是哪个玩家造了这个TNT大炮是十分困难的。
+    想一想，坏蛋可以把一个TNT用红石大炮从领域的外面抛到领域内来破坏你的建筑，就算你禁止了TNT爆炸，坏蛋依然可以造一台活塞蠕虫（指的是能自己推动自己向前走的机器，以活塞和红石为主要元件）来破坏你领域内的建筑。要想追踪到是哪个玩家造了这个TNT大炮是十分困难的。
 
     彻底禁止TNT爆炸或者彻底禁止活塞的工作并不是一个解决办法，或者甚至可以说是“懒政”“一刀切”之类的。红石和TNT在许多情况下是非常有用的工具，有时你甚至希望在你的领域内放置一个红石活塞门，这就要求活塞能在领域内工作。
 
@@ -172,12 +172,11 @@ Overrides
     在领域内部的TNT大炮和活塞应该要能正常工作，因为它们是“领域成员”。
     现在想象一下一个新的玩家，Bobby。Bobby还不是领域的成员，所以他无法在领域内放置或摧毁任何方块，当你让他成为了领域的成员之后，他就拥有了建造的权限。
     
-    When you set the protection flags, you override this behavior. If you set ``block-break`` to ``deny``, then even members are unable to break blocks. Bobby cannot break blocks. A TNT cannon inside cannot break blocks. A piston inside cannot break blocks. **You break pistons.**
+    当你设置了这个分类下的flag之后，这些flag会覆盖掉这一个默认值，就比方说当你把``block-break``设置成了``deny``，那么就连领域的成员也无法在领域内拆除什么东西了，也就是说，Bobby没办法破坏方块、TNT没办法破坏方块、活塞也无法破坏方块，换句话说，**活塞就没法正常工作了**。
 
-    That begs two questions:
-
-    * **How do I prevent players from placing or breaking blocks?** Don't do anything. Don't change any flags! Remember, only members can build by default.
-    * **How do I change a flag to only affect players?** You probably mean: how do you make a flag only affect *non-members*? Well, that's easy: use :ref:`region-groups`.
+    这就带来了两个问题：
+    * **我要如何阻止玩家破坏我领域内的方块？** 什么都不要做，创建了你的领域之后，保持所有的flag都是默认值。
+    * **我要怎么设置才能让这些flag只对玩家有效？** 你的问题应该是：“我要怎么设置才能让这些flag只对 **非领域成员** 有效？”嗯……这其实很简单啦，你可以回头去看看 :ref:`region-groups`。
 
 .. tip::
     Note: If the ``build`` flag is set to ``allow`` or ``deny``, it can still be overriden with a different flag (``block-break``, ``interact``, etc.). This is only the case with the build flag.
