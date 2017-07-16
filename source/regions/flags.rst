@@ -208,7 +208,7 @@ Overrides
 
         /rg flag spawn deny-spawn cow,pig
 
-自燃事件
+自然事件
 ~~~~~~~~~~~~~~
 
 .. csv-table::
@@ -231,7 +231,7 @@ Overrides
     soil-dry,state,土壤是否会变干
 
 .. warning::
-    ``fire-spread``，``water-flow`` 和 ``lava-flow`` 这三个flag需要打开 doc:`configuration <../config>` 里的 "high frequency flags" 选项，因为这三个事件可能会更新得非常频繁，并且需要更多的region查询，可能会导致服务器卡顿（至少会使你的服务器机房变得更热）。
+    ``fire-spread``，``water-flow`` 和 ``lava-flow`` 这三个flag需要打开 :doc:`configuration <../config>` 里的 "high frequency flags" 选项，因为这三个事件可能会更新得非常频繁，并且需要更多的region查询，可能会导致服务器卡顿（至少会使你的服务器机房变得更热）。
     The ``fire-spread``, ``water-flow`` and ``liquid-flow`` flags require that the "high frequency flags" option be enabled in the :doc:`configuration <../config>`. This is because these events can be very frequent, requiring more region lookups, and potentially slowing down your server (or at least warming the server room a bit more).
 
 Map Making
