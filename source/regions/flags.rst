@@ -231,7 +231,7 @@ Overrides
     soil-dry,state,土壤是否会变干
 
 .. warning::
-    ``fire-spread``，``water-flow`` 和 ``lava-flow`` 这三个flag需要打开 :doc:`configuration <../config>` 里的 "high frequency flags" 选项，因为这三个事件可能会更新得非常频繁，并且需要更多的region查询，可能会导致服务器卡顿（至少会使你的服务器机房变得更热）。
+    ``fire-spread``，``water-flow`` 和 ``lava-flow`` 这三个flag需要打开 :doc:`configuration <../config.rst>` 里的 "high frequency flags" 选项，因为这三个事件可能会更新得非常频繁，并且需要更多的region查询，可能会导致服务器卡顿（至少会使你的服务器机房变得更热）。
     The ``fire-spread``, ``water-flow`` and ``liquid-flow`` flags require that the "high frequency flags" option be enabled in the :doc:`configuration <../config>`. This is because these events can be very frequent, requiring more region lookups, and potentially slowing down your server (or at least warming the server room a bit more).
 
 Map Making
@@ -241,19 +241,19 @@ Map Making
     :header: Flag, Type, description
     :widths: 10, 5, 30
 
-    item-pickup,state,Whether items can be picked up
-    item-drop,state,Whether items can be dropped
-    exp-drops,state,Whether XP drops are permitted
-    deny-message,string,The message issued to players that are denied an action
-    entry,state,Whether players can enter the region
-    exit,state,Whether players can exit the region
-    greeting,string,The message that appears upon entering the region
-    farewell,string,The message that appears upon leaving the region
-    enderpearl,state,Whether enderpearls can be used
-    invincible,state,Whether players are invincible
-    game-mode,gamemode,"The gamemode (survival, creative, adventure) that will be applied to players that enter the region"
-    time-lock,integer,"Time of day in ticks (between 0 and 24000) that players will see the world as while in the region. Use + or - for time relative to the world time."
-    weather-lock,weather,Type of weather players will see when in the region. This does not affect world mechanics. Valid values are ``downfall`` and ``clear``.
+    item-pickup,state,掉落物是否能被捡起
+    item-drop,state,物品是否能被丢弃
+    exp-drops,state,是否掉落经验
+    deny-message,string,当拒绝玩家的某个操作时给玩家提示的消息
+    entry,state,玩家是否能进入此区域
+    exit,state,玩家是否能离开此区域
+    greeting,string,当玩家进入区域时提示的消息
+    farewell,string,当玩家离开区域时提示的消息
+    enderpearl,state,是否能使用末影珍珠
+    invincible,state,玩家是否无敌
+    game-mode,gamemode,"当玩家进入区域时应用的游戏模式 (survival, creative, adventure)"
+    time-lock,integer,"玩家在region内看到的游戏时间，用tick来表示 (between 0 and 24000)；或者用“+”或者“-”来调整为相对于region外的时间调快/慢多少tick"
+    weather-lock,weather,"玩家在区域内看到的天气。这不会影响区域外的天气。有效的值有 ``downfall`` （下雨）和 ``clear`` （晴天）"
     heal-delay,integer,The number of seconds between heals (if ``heal-amount`` is set)
     heal-amount,integer,The amount of half hearts to heal (...or hurt if negative) the player at the rate of ``heal-delay``
     heal-min-health,double,The minimum number of half hearts that damage (via ``heal-amount``) will not exceed
