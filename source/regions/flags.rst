@@ -231,7 +231,7 @@ Overrides
     soil-dry,state,土壤是否会变干
 
 .. warning::
-    ``fire-spread``，``water-flow`` 和 ``lava-flow`` 这三个flag需要打开 `configuration <../config.rst>` 里的 "high frequency flags" 选项，因为这三个事件可能会更新得非常频繁，并且需要更多的region查询，可能会导致服务器卡顿（至少会使你的服务器机房变得更热）。
+    ``fire-spread``，``water-flow`` 和 ``lava-flow`` 这三个flag需要打开 `configuration <../config.rst>`_ 里的 "high frequency flags" 选项，因为这三个事件可能会更新得非常频繁，并且需要更多的region查询，可能会导致服务器卡顿（至少会使你的服务器机房变得更热）。
     
 Map Making
 ~~~~~~~~~~
@@ -267,7 +267,7 @@ Map Making
     allowed-cmds,set of strings,"一个在区域内允许使用的命令的列表"
 
 .. warning::
-    *healing、feeding、greeting、farewell* 四个flag需要启用 `configuration <../config.rst>`里的"use player move event"（默认为启用）。
+    *healing、feeding、greeting、farewell* 四个flag需要启用 `configuration <../config.rst>`_ 里的"use player move event"（默认为启用）。
 
 .. topic:: 例：改变一个玩家的操作被禁止时收到的消息： ::
 
@@ -301,8 +301,8 @@ Map Making
     send-chat,state,玩家是否能发送消息
     receive-chat,state,玩家是否能接收消息
     potion-splash,state,药水是否有喷溅效果
-    notify-enter,boolean,"当有其他玩家进入你的领域的时候是否给你发送提醒（需要 ``worldguard.notify`` 权限"
-    notify-leave,boolean,"当有其他玩家离开你的领域的时候是否给你发送提醒（需要 ``worldguard.notify`` 权限"
+    notify-enter,boolean,"当有其他玩家进入你的领域的时候是否给你发送提醒（需要 ``worldguard.notify`` 权限）"
+    notify-leave,boolean,"当有其他玩家离开你的领域的时候是否给你发送提醒（需要 ``worldguard.notify`` 权限）"
 
 不再使用的
 ~~~~~~~~~~~~~~~~
