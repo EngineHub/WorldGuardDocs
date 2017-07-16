@@ -24,7 +24,7 @@ Region Flags
 
     /region info spawn
 
-.. _组:
+.. _组: https://github.com/erickwoc/WorldGuardDocs/blob/%E4%B8%AD%E6%96%87/source/regions/flags.rst#组
 
 组
 =============
