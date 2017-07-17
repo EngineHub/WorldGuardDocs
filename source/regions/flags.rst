@@ -24,7 +24,7 @@ Region Flags
 
     /region info spawn
 
-.. _组: flags.rst#组
+.. _region-groups:
 
 组
 =============
@@ -177,7 +177,7 @@ Overrides
     这就带来了两个问题：
     
     * **我要如何阻止玩家破坏我领域内的方块？** 什么都不要做，创建了你的领域之后，保持所有的flag都是默认值。
-    * **我要怎么设置才能让这些flag只对玩家有效？** 你的问题应该是：“我要怎么设置才能让这些flag只对 **非领域成员** 有效？”嗯……这其实很简单啦，你可以回头去看看 组_。
+    * **我要怎么设置才能让这些flag只对玩家有效？** 你的问题应该是：“我要怎么设置才能让这些flag只对 **非领域成员** 有效？”嗯……这其实很简单啦，你可以回头去看看 :ref:`region-groups`
 
 .. tip::
     
@@ -231,7 +231,7 @@ Overrides
     soil-dry,state,土壤是否会变干
 
 .. warning::
-    ``fire-spread``，``water-flow`` 和 ``lava-flow`` 这三个flag需要打开 `configuration <../config.rst>`_ 里的 "high frequency flags" 选项，因为这三个事件可能会更新得非常频繁，并且需要更多的region查询，可能会导致服务器卡顿（至少会使你的服务器机房变得更热）。
+    ``fire-spread``，``water-flow`` 和 ``lava-flow`` 这三个flag需要打开 :doc:`configuration <../config>` 里的 "high frequency flags" 选项，因为这三个事件可能会更新得非常频繁，并且需要更多的region查询，可能会导致服务器卡顿（至少会使你的服务器机房变得更热）。
     
 Map Making
 ~~~~~~~~~~
@@ -267,7 +267,7 @@ Map Making
     allowed-cmds,set of strings,"一个在区域内允许使用的命令的列表"
 
 .. warning::
-    *healing、feeding、greeting、farewell* 四个flag需要启用 `configuration <../config.rst>`_ 里的"use player move event"（默认为启用）。
+    *healing、feeding、greeting、farewell* 四个flag需要启用 :doc:`configuration <../config>` 里的"use player move event"（默认为启用）。
 
 .. topic:: 例：改变一个玩家的操作被禁止时收到的消息：
     
