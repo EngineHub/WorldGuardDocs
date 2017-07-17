@@ -51,9 +51,9 @@
     auto-invincible,FALSE,"当有 ``worldguard.auto-invincible`` 权限的玩家加入游戏的时候自动为其开启无敌模式"
     auto-invincible-group,FALSE,"当有 ``wg-invincible`` 权限组权限的玩家加入游戏的时候自动为其开启无敌模式"
     auto-no-drowning-group,FALSE,"当有 ``wg-amphibious`` 权限组权限的玩家加入游戏的时候为其开启水下呼吸模式"
-    use-player-move-event,TRUE,"是否允许 WorldGuard 多占用一丢丢CPU时间来追踪玩家的位置，若要开启healing、feeding、greeting 等flag时必须开启，见: `flags <regions/flags.rst>`_."
-    use-player-teleports,TRUE,Whether teleport events should be considered when tracking player movement. Teleport events do not occur necessarily because the player teleports; it may occur somewhat randomly.
-    host-keys,,A list of hostnames that players must connect from. See :doc:`host-keys`.
+    use-player-move-event,TRUE,"是否允许 WorldGuard 多占用一丢丢CPU时间来追踪玩家的位置，若要开启healing、feeding、greeting 等flag时必须开启，见 `flags <regions/flags.rst>`_"
+    use-player-teleports,TRUE,"追踪玩家位置时是否追踪传送事件，有时玩家传送时不会产生传送事件，我也不知道为什么，这个现象是随机的"
+    host-keys,,开启安全模式，详见 `host_keys<host-keys>`_.
 
 security.*
 ~~~~~~~~~~
