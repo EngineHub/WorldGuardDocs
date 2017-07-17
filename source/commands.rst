@@ -1,47 +1,47 @@
 ========
-Commands
+命令
 ========
 
-WorldGuard provides five categories of commands:
+WorldGuard 提供了五种类别的命令：
 
-* Gameplay-related (``/god``, ``/heal``, etc.)
-* Working with :doc:`regions <regions/index>`
+* 游戏相关 (``/god``, ``/heal``, etc.)
+* 与 :doc:`regions <regions/index>` 相关的
 * Time-sensitive emergency response
-* Troubleshooting
-* WorldGuard-related (version information, reloading configuration)
+* 错误排查相关
+* 与插件本体相关的 (version information, reloading configuration)
 
-See the :doc:`permissions page <permissions>` for the necessary permission nodes.
+查看 :doc:`permissions page <permissions>` 来了解权限节点的配置方法。
 
 .. hint::
-    When a parameter (like ``<player>``) is surrounded by ``[]``, it means that the parameter is optional. In addition, don't put ``<`` or ``>`` when entering the command.
+    当一个参数（比如 ``<player>``）被 ``[]`` 围绕，这意味着这个参数是可选的。另外，输入命令的时候不需要输入 ``<`` 或 ``>`` 。
 
 Gameplay
 ========
 
 .. csv-table::
-    :header: Command, Parameters, Explanation
-    :widths: 8, 8, 25
+    :header: 命令, 参数, 解释
+    :widths: 8, 8, 25
 
-    /god,"[-s] [<player>]","Give yourself or another player invicinbility. ``-s`` can be optionally specified to have no message emitted."
-    /ungod,"[-s] [<player>]","Remove invicinbility from yourself or another player. ``-s`` can be optionally specified to have no message emitted."
-    /heal,"[-s] [<player>]","Heal yourself or another player. ``-s`` can be optionally specified to have no message emitted."
-    /slay,"[-s] [<player>]","Slay yourself or another player. ``-s`` can be optionally specified to have no message emitted."
-    /locate,"[<player>]","Have your compass point to another player (if specified), or pointed to spawn if no player is specified."
-    /stack,"","Organize your inventory and automatically stack items."
-    /;,"","An alias for ``/stack``."
+    /god,"[-s] [<player>]","为你自己或者其他玩家开启无敌模式，若你不希望用户收到提示可以加上 ``-s`` "
+    /ungod,"[-s] [<player>]","为你自己或其他玩家关闭无敌模式，若你不希望用户收到提示可以加上 ``-s`` "
+    /heal,"[-s] [<player>]","治疗你自己或者其他玩家。若你不希望用户收到提示可以加上 ``-s`` "
+    /slay,"[-s] [<player>]","杀死你自己或其他玩家。若你不希望用户收到提示可以加上 ``-s`` "
+    /locate,"[<player>]","如果指定了玩家的话使你的指南针指向该玩家，否则指向出生点"
+    /stack,"","整理你的背包并自动堆叠物品"
+    /;,""," ``/stack`` 的别名"
 
-Selectors
+匹配式
 ~~~~~~~~~
 
-The commands that take a player name support *selectors*, but they differ from Minecraft's selectors which came about 3 years later.
+这些命令支持 *匹配式*，但它们与MC官方三年后出的匹配式有所不同。
 
-Players can be matched with:
+以下情况中，玩家会被匹配到:
 
-* By default, players are matched if their name *starts with* the given name
-* ``*`` to match all
-* ``#<world>`` to match everyone on a certain world
-* ``#near`` to match nearby players to the command's user
-* ``@<name>`` to match a player's name exactly
+* 默认情况下，如果玩家ID的 *开头* 与输入的字符串相同则能够匹配
+* ``*`` 来匹配所有玩家
+* ``#<world>`` 来匹配某个世界中的所有玩家
+* ``#near`` 来匹配使用命令的玩家周围的玩家
+* ``@<name>`` 来匹配一个玩家的确切ID
 
 Regions
 =======
