@@ -102,8 +102,8 @@ Overrides
 ~~~~~~~~~
 
 .. csv-table::
-    :header: Flag, Type, description
-    :widths: 10, 5, 30
+    :header: Flag, 类型, 描述
+    :widths: 10, 5, 30
 
     passthrough,state,"这个flag是 *passthrough build* 的缩写，与能不能进入某区域没有关系。
 
@@ -123,8 +123,8 @@ Overrides
 ~~~~~~~~~~~~~~~~~~
 
 .. csv-table::
-    :header: Flag, Type, description
-    :widths: 10, 5, 30
+    :header: Flag, 类型, 描述
+    :widths: 10, 5, 30
 
     build,state,"这是总开关，可以控制:
 
@@ -187,8 +187,8 @@ Overrides
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. csv-table::
-    :header: Flag, Type, description
-    :widths: 10, 5, 30
+    :header: Flag, 类型, 描述
+    :widths: 10, 5, 30
 
     creeper-explosion,state,苦力怕爆炸是否破坏方块
     enderdragon-block-damage,state,末影龙是否能破坏方块
@@ -212,8 +212,8 @@ Overrides
 ~~~~~~~~~~~~~~
 
 .. csv-table::
-    :header: Flag, Type, description
-    :widths: 10, 5, 30
+    :header: Flag, 类型, 描述
+    :widths: 10, 5, 30
 
     lava-fire,state,岩浆是否能引起火焰
     lightning,state,闪电是否能击中区域内方块
@@ -237,8 +237,8 @@ Map Making
 ~~~~~~~~~~
 
 .. csv-table::
-    :header: Flag, Type, description
-    :widths: 10, 5, 30
+    :header: Flag, 类型, 描述
+    :widths: 10, 5, 30
 
     item-pickup,state,掉落物是否能被捡起
     item-drop,state,物品是否能被丢弃
@@ -298,8 +298,8 @@ Map Making
 ~~~~~~~~~~~~~
 
 .. csv-table::
-    :header: Flag, Type, description
-    :widths: 10, 5, 30
+    :header: Flag, 类型, 描述
+    :widths: 10, 5, 30
 
     pistons,state,活塞是否能使用
     send-chat,state,玩家是否能发送消息
@@ -312,8 +312,8 @@ Map Making
 ~~~~~~~~~~~~~~~~
 
 .. csv-table::
-    :header: Flag, Type, description
-    :widths: 10, 5, 30
+    :header: Flag, 类型, 描述
+    :widths: 10, 5, 30
 
     allow-shop,state,"WorldGuard 已经不再使用这个flag，但是其他的插件可能需要使用"
     buyable,boolean,"WorldGuard 已经不再使用这个flag，但是其他的插件可能需要使用"
