@@ -1,57 +1,57 @@
 =============
-Configuration
+配置
 =============
 
-Many of WorldGuard's features exist as configuration options (potion blocking, scuba mode with pumpkins, etc.). Every configuration option available is listed on this page.
+很多的 WorldGuard 的功能都可以通过配置文档来开关（比如禁用药水、开启南瓜水肺等等），所有可用的配置选项都将在这一个页面中列出。
 
-Configuration Files
+配置文件
 ===================
 
-Once you have run your server with WorldGuard installed, you will find the main configuration file inside the **plugins/WorldGuard** folder:
+一旦你将 WorldGuard 加载之后，在 **./plugins/WorldGuard** 路径下就会生成一个默认配置文件，文件名是：
 
 * ``config.yml``
 
-Then for every world, you will find per-world configuration files:
+并且每个世界都有自己独立的一个配置文件，类似于：
 
 * ``worlds/world/config.yml``
 * ``worlds/world_nether/config.yml``
 * ``worlds/mining_world/config.yml``
 
-If you open up the per-world configuration files, they will be nearly empty. When you wish to override a setting, you would copy it into the world's configuration file.
+如果你打开世界的独立配置文件，你会发现他们几乎都是空的，如果你想要对某些世界做一些特别的设置，你可以从总配置文档里把你想要更改的条目复制粘贴到独立配置文件中，然后再进行更改。
 
-.. topic:: Example: Making a configuration option per-world
+.. topic:: 例：做一个世界的独立设置
 
-    In the main configuration file, you may have set ``block-creeper-block-damage`` to true::
+    假设在全局设置里，你将 ``block-creeper-block-damage`` 设为 ``true`` ::
 
         mobs:
             block-creeper-explosions: false
             block-creeper-block-damage: true
             block-wither-explosions: false
 
-    But you want to set it to ``false`` in your nether world. Open up ``orlds/world_nether/config.yml`` and replace the file with::
+    但你希望它在地狱（下界）里为 ``false``，你可以打开 ``worlds/worlds_nether/config.yml`` 并将里面的内容替换为::
 
         mobs:
             block-creeper-block-damage: false
 
-    Only the relevant line, as well as any parent sections, needs to be copied over.
+    你只需要复制关键行和它的父字段（此例中为 ``block-creeper-block-damage`` 这一行与开头的 ``mobs:``
 
-
-Settings
+设置项
 ========
 
 .. note::
-    These options are presented here as a reference, but you should change a desired option by first finding it in ``config.yml`` because some settings may need to be nested under another setting.
+    
+    此处列出的设置项仅供参考，你依然需要在全局配置文件里找到他们（可以尝试使用Ctrl+F快捷键，在大多数的编辑器里它都代表查找命令；在nano中这个命令的快捷键为^W），因为有些设置是嵌套于其他设置里的，如果被打乱顺序，则配置文件可能会出错。
 
 .. csv-table::
-    :header: Setting, Default, Description
-    :widths: 12, 5, 30
+    :header: Setting, Default, 描述
+    :widths: 12, 5, 30
 
-    op-permissions,TRUE,"Whether players with op should be given all permissions for WorldGuard, even if the permissions plugin in use does not provide permission for ops."
-    summary-on-start,TRUE,Show summary information about WG's settings for each world on server start. This is pretty noisy and it should be disabled if you have many worlds.
-    auto-invincible,FALSE,Give players with the ``worldguard.auto-invincible`` permission invincibility mode on join.
-    auto-invincible-group,FALSE,Give players in the ``wg-invincible`` permission group invincibility mode on join.
-    auto-no-drowning-group,FALSE,Give players in the ``wg-amphibious`` permission group water breathing mode on join.
-    use-player-move-event,TRUE,"Whether WorldGuard should use (a little) more CPU to handle features that require tracking player movement. This must be on healing, feeding, greeting, and some other :doc:`regions/flags`."
+    op-permissions,TRUE,"是否给予op所有权限，即使权限管理插件没有给op任何权限"
+    summary-on-start,TRUE,"当服务器启动时是否列出每个世界的WG的设定？当你有很多个世界的时候建议关闭"
+    auto-invincible,FALSE,"当有 ``worldguard.auto-invincible`` 权限的玩家加入游戏的时候自动为其开启无敌模式"
+    auto-invincible-group,FALSE,"当有 ``wg-invincible`` 权限组权限的玩家加入游戏的时候自动为其开启无敌模式"
+    auto-no-drowning-group,FALSE,"当有 ``wg-amphibious`` 权限组权限的玩家加入游戏的时候为其开启水下呼吸模式"
+    use-player-move-event,TRUE,"是否允许 WorldGuard 多占用一丢丢CPU时间来追踪玩家的位置，若要开启healing、feeding、greeting 等flag时必须开启，见: `flags <regions/flags.rst>`_."
     use-player-teleports,TRUE,Whether teleport events should be considered when tracking player movement. Teleport events do not occur necessarily because the player teleports; it may occur somewhat randomly.
     host-keys,,A list of hostnames that players must connect from. See :doc:`host-keys`.
 
