@@ -43,7 +43,7 @@
     此处列出的设置项仅供参考，你依然需要在全局配置文件里找到他们（可以尝试使用Ctrl+F快捷键，在大多数的编辑器里它都代表查找命令；在nano中这个命令的快捷键为^W），因为有些设置是嵌套于其他设置里的，如果被打乱顺序，则配置文件可能会出错。
 
 .. csv-table::
-    :header: Setting, Default, 描述
+    :header: 设置项, 默认值, 描述
     :widths: 12, 5, 30
 
     op-permissions,TRUE,"是否给予op所有权限，即使权限管理插件没有给op任何权限"
@@ -53,33 +53,33 @@
     auto-no-drowning-group,FALSE,"当有 ``wg-amphibious`` 权限组权限的玩家加入游戏的时候为其开启水下呼吸模式"
     use-player-move-event,TRUE,"是否允许 WorldGuard 多占用一丢丢CPU时间来追踪玩家的位置，若要开启healing、feeding、greeting 等flag时必须开启，见 `flags <regions/flags.rst>`_"
     use-player-teleports,TRUE,"追踪玩家位置时是否追踪传送事件，有时玩家传送时不会产生传送事件，我也不知道为什么，这个现象是随机的"
-    host-keys,,开启安全模式，详见 `host_keys <host-keys>`_.
+    host-keys,,开启安全模式，详见 `host_keys <host-keys.rst>`_.
 
 security.*
 ~~~~~~~~~~
 
 .. csv-table::
-    :header: Setting, Default, Description
-    :widths: 12, 5, 30
+    :header: 设置项, 默认值, 描述
+    :widths: 12, 5, 30
 
-    deop-everyone-on-join,FALSE,Clear op status from all players that join.
-    block-in-game-op-command,FALSE,Block the /op command from being used in-game.
+    deop-everyone-on-join,FALSE,"玩家进入游戏时清除他的op权限"
+    block-in-game-op-command,FALSE,"禁止游戏内使用 ``/op`` 命令（控制台不受影响）"
 
 build-permission-nodes.*
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. csv-table::
-    :header: Setting, Default, Description
+    :header: 设置项, 默认值, 描述
     :widths: 12, 5, 30
 
-    enable,FALSE,A feature that lets you block building based on giving players the proper permissions. See :doc:`build-perms`.
-    deny-message,,"Concerning build permissions, this is the message that is sent when permission is denied. If a message is not set, a default one is used."
+    enable,FALSE,"一个能让你基于权限插件控制玩家的建造权限的功能，见 `build-perms <build-perms.rst>`_"
+    deny-message,,"结合上文，这是一个当玩家的建造操作被拒绝的时候提示的消息"
 
 event-handling.*
 ~~~~~~~~~~~~~~~~
 
 .. csv-table::
-    :header: Setting, Default, Description
+    :header: 设置项, 默认值, 描述
     :widths: 12, 5, 30
 
     block-entity-spawns-with-untraceable-cause,FALSE,"As Bukkit does not always tell plugins the exact reason that an entity was spawned, it may be possible for a player to bypass protection to spawn an entity (such as with a spawn egg). This option blocks cases where the true cause cannot be determined. It is recommended that this option is left off because the number of cases where the cause is not known is quite large."
