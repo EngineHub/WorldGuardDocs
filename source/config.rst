@@ -53,7 +53,7 @@
     auto-no-drowning-group,FALSE,"当有 ``wg-amphibious`` 权限组权限的玩家加入游戏的时候为其开启水下呼吸模式"
     use-player-move-event,TRUE,"是否允许 WorldGuard 多占用一丢丢CPU时间来追踪玩家的位置，若要开启healing、feeding、greeting 等flag时必须开启，见 `flags <regions/flags.rst>`_"
     use-player-teleports,TRUE,"追踪玩家位置时是否追踪传送事件，有时玩家传送时不会产生传送事件，我也不知道为什么，这个现象是随机的"
-    host-keys,,开启安全模式，详见 `host_keys <host-keys.rst>`_.
+    host-keys,,开启安全模式，详见 :doc:`host_keys <host-keys>`.
 
 security.*
 ~~~~~~~~~~
@@ -72,7 +72,7 @@ build-permission-nodes.*
     :header: 设置项, 默认值, 描述
     :widths: 12, 5, 30
 
-    enable,FALSE,"一个能让你基于权限插件控制玩家的建造权限的功能，见 `build-perms <build-perms.rst>`_"
+    enable,FALSE,"一个能让你基于权限插件控制玩家的建造权限的功能，见  :doc:`build-perms <build-perms>`"
     deny-message,,"结合上文，这是一个当玩家的建造操作被拒绝的时候提示的消息"
 
 event-handling.*
@@ -82,7 +82,7 @@ event-handling.*
     :header: 设置项, 默认值, 描述
     :widths: 12, 5, 30
 
-    block-entity-spawns-with-untraceable-cause,FALSE,"As Bukkit does not always tell plugins the exact reason that an entity was spawned, it may be possible for a player to bypass protection to spawn an entity (such as with a spawn egg). This option blocks cases where the true cause cannot be determined. It is recommended that this option is left off because the number of cases where the cause is not known is quite large."
+    block-entity-spawns-with-untraceable-cause,FALSE,"因为 bukkit 不会告诉插件实体生成的原因，所以其他玩家是有可能绕过你的限制而在你的领域内生成实体的（例如使用刷怪蛋）。如果你发现你的领域内莫名其妙的多出了很多怪物，而你的设置是禁止生怪，则可以将这个选项打开。"
     interaction-whitelist,[],"A list of block types that should not be protected. For example, if chests were added to this list, then they would never be protected with :doc:`region protection <regions/index>`. This setting is useful primarily when non-vanilla functionality is present (game features added by other plugins or mods) and you don't want it blocked."
     emit-block-use-at-feet,[],"A list of items that, if used, will also require that the player have the permission to *theoretically* modify the block at his or her feet. This setting is useful primarily when there is some item from some plugin or mod that uses a projectile (that affects the world) but does not test permission with WorldGuard. However, this is not a proper solution because the player can still stand in an area where he or she has permission and shoot *into* the desired area."
 
