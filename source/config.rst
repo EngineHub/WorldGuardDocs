@@ -53,7 +53,7 @@
     auto-no-drowning-group,FALSE,"当有 ``wg-amphibious`` 权限组权限的玩家加入游戏的时候为其开启水下呼吸模式"
     use-player-move-event,TRUE,"是否允许 WorldGuard 多占用一丢丢CPU时间来追踪玩家的位置，若要开启healing、feeding、greeting 等flag时必须开启，见 `flags <regions/flags.rst>`_"
     use-player-teleports,TRUE,"追踪玩家位置时是否追踪传送事件，有时玩家传送时不会产生传送事件，我也不知道为什么，这个现象是随机的"
-    host-keys,,开启安全模式，详见 `host_keys<host-keys>`_.
+    host-keys,,开启安全模式，详见 `host_keys <host-keys>`_.
 
 security.*
 ~~~~~~~~~~
