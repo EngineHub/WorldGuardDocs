@@ -11,7 +11,7 @@ To query protection, the ``Flags.BUILD`` flag can be tested using the methods ex
 
     .. code-block:: java
 
-        LocalPlayer localPlayer = getWorldGuard().wrapPlayer(player)
+        LocalPlayer localPlayer = getWorldGuard().wrapPlayer(player);
         Location loc = new Location(world, 10, 64, 100);
         RegionContainer container = WorldGuard.getInstance().getPlatform().getRegionContainer();
         RegionQuery query = container.createQuery();
