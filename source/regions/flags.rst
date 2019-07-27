@@ -293,7 +293,7 @@ Map Making
     firework-damage,state,Whether entities receive damage from fireworks
     game-mode,gamemode,"The gamemode (survival, creative, adventure) that will be applied to players that enter the region"
     time-lock,string,"Time of day in ticks (between 0 and 24000) that players will see the world as while in the region. Use + or - for time relative to the world time."
-    weather-lock,weather,Type of weather players will see when in the region. This does not affect world mechanics. Valid values are ``downfall`` and ``clear``.
+    weather-lock,weather,Type of weather players will see when in the region. This does not affect world mechanics. Valid values are ``rain`` and ``clear``.
     heal-delay,integer,The number of seconds between heals (if ``heal-amount`` is set)
     heal-amount,integer,The amount of half hearts to heal (...or hurt if negative) the player at the rate of ``heal-delay``
     heal-min-health,double,The minimum number of half hearts that damage (via ``heal-amount``) will not exceed
