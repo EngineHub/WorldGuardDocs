@@ -21,7 +21,8 @@ Registering has to be done before WorldGuard is **enabled**. Thus, it is highly 
         // note: if you want to use a different type of flag, make sure you change StateFlag here and below to that type
         public static StateFlag MY_CUSTOM_FLAG;
 
-        public boolean onLoad() {
+        @Override
+        public void onLoad() {
             // ... do your own plugin things, etc
 
             FlagRegistry registry = WorldGuard.getInstance().getFlagRegistry();
