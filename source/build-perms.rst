@@ -24,4 +24,4 @@ Permissions List
 
 The permissions are also checked in the style of ``worldguard.build.block.<material>.<action>``, so ``worldguard.build.block.<material>.place`` would work too.
 
-The list of usable material names comes from the `Material list in Bukkit <https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html>`_. For example, the permission for placing the bed block would be ``worldguard.build.block.place.bed_block``. Be aware that *Material* contains both item and block names.
+The list of usable material names comes from the `Material list in Bukkit <https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html>`_. For example, the permission for placing the bed block would be ``worldguard.build.block.place.red_bed``. Be aware that *Material* contains both item and block names.
