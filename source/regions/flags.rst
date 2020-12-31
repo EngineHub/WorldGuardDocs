@@ -243,7 +243,7 @@ Natural Events
     coral-fade,state,Whether coral will die when not in water.
 
 .. warning::
-    The ``fire-spread``, ``water-flow`` and ``liquid-flow`` flags require that the "high frequency flags" option be enabled in the :doc:`configuration <../config>`. This is because these events can be very frequent, requiring more region lookups, and potentially slowing down your server (or at least warming the server room a bit more).
+    The ``fire-spread`` and ``water-flow`` flags require that the "high frequency flags" option be enabled in the :doc:`configuration <../config>`. This is because these events can be very frequent, requiring more region lookups, and potentially slowing down your server (or at least warming the server room a bit more).
 
 Movement
 ~~~~~~~~
