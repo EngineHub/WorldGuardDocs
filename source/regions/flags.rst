@@ -274,6 +274,9 @@ Movement
 .. tip::
     As mentioned above, the teleport and spawn location flags default to "members", which means that only members can take advantage of them by default. Set the region group for the flag to change this.
 
+.. tip::
+    If overlapping regions have the same greeting or farewell flag, no message is sent when moving between these regions, i.e. if you enter one region while being in the other.
+
 .. warning::
     The greeting and farewell message flags require that the "use player move event" option **not** be disabled in the :doc:`configuration <../config>`.
 
