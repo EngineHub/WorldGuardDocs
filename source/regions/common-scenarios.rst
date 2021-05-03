@@ -70,12 +70,12 @@ How do I unprotect all enchantment tables?
 
 In the :doc:`../config`, adjust the ``interaction-whitelist`` setting and add the enchantment table. Get the proper names that you can use from `Bukkit's Material <https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html>`_.
 
-How do I allow mining but prevent block breaking?
+How do I allow mining but prevent block placing?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Set the ``block-break`` flag to ``allow``::
 
-* /rg flag mining_area block-break allow
+    /rg flag mining_area block-break allow
 
 How do I allow players to read lectern books, but not take them?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
