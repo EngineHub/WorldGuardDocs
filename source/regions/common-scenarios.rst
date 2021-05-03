@@ -156,5 +156,5 @@ Did you set the ``build`` flag? You probably do not want to do that. Be sure to 
     /rg flag __global__ passthrough deny
 
 .. warning::
-    At this time, it is not possible for a piston to push from one region into another. This issue is tracked as `WORLDGUARD-3234 <https://dev.enginehub.org/youtrack/issue/WORLDGUARD-3234>`_ on the issue tracker.
+    At this time, it is not possible for a piston to push from one region into another. This issue is tracked as `WORLDGUARD-3234 <https://github.com/EngineHub/WorldGuard/issues/1047>`_ on the issue tracker.
 
