@@ -88,7 +88,7 @@ First, make sure you are on WorldGuard 7.0.1+. Earlier versions of WorldGuard re
 How do I allow breaking of only certain block types?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Sorry, this is not supported yet!
+Sorry, this is not supported per region yet! However, this can either be done per world in whitelist mode as described in :doc:`../blacklist/index` or using :doc:`../build-perms`.
 
 Plot Setups
 ===========
