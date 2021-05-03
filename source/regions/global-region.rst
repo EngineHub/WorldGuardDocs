@@ -42,6 +42,11 @@ Adding Members
 
 Due to legacy reasons, adding owners or members to the global region implicitly sets ``passthrough`` to deny. That means that you do not have to actually change the flag, although it is recommended anyway.
 
+Non-Player Associables
+~~~~~~~~~~~~~~~~~~~~~~
+
+Non-player associables, such as pistons, are usually members of either all regions in which they are in or only of the regions with the highest priorities in which they are in, depending on the ``use-max-priority-association`` :doc:`../config` setting. However, non-player associables are no longer members of the global region if they are in at least one other region. This means that pistons, for example, cannot push blocks from inside a region into a protected global region. Thus the global region always behaves as if ``use-max-priority-association`` is set to ``true``.
+
 Build Flag
 ~~~~~~~~~~
 
