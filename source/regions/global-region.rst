@@ -45,13 +45,11 @@ Due to legacy reasons, adding owners or members to the global region implicitly 
 Build Flag
 ~~~~~~~~~~
 
-The ``build`` flag **cannot** be set to ``allow`` as there should be no reason to and it essentially breaks all regions by default. Setting the flag to ``deny`` works like it does with any other region, but be aware that setting ``build`` to deny on any region essentially means that *nothing* can break or place blocks, therefore breaking things like pistons. Since the global region encompasses the entire world, it would break all pistons.
+Setting the ``build`` flag to ``allow`` has **no** effect as there should be no reason to. Setting the flag to ``deny`` works like it does with any other region, but be aware that setting ``build`` to deny on any region essentially means that *nothing* can break or place blocks, therefore breaking things like pistons. Since the global region encompasses the entire world, it would break all pistons that are not within another region.
 
 .. warning::
 
-    Setting the ``build`` flag on the global region is strongly discouraged. If you want to protect the world by default, set the ``passthrough`` flag. If you set the build flag on the global region, other regions will **not** override the flag unless the other region also has ``build`` set to something.
-
-    Thus, setting ``build`` to ``deny`` on the global region prevents people from building at all in regions that they own or are a member of.
+    Setting the ``build`` flag on the global region is strongly discouraged. If you want to protect the world by default, set the ``passthrough`` flag.
 
 Overriding Defaults
 ===================
