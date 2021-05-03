@@ -104,6 +104,7 @@ protection.*
     item-durability,TRUE,"Set to ``false`` to have items never break."
     remove-infinite-stacks,FALSE,"Remove items with 'infinite' stack sizes, which is essentially any stack size less than 0 (which is the result of a number overflowing the maximum and wrapping into the negatives)."
     disable-xp-orb-drops,FALSE,"Whether to disable XP orb drops."
+    use-max-priority-association,FALSE,"Wheter or not non-player associables, such as pistons, are only members of the regions with the highest priorities in which they are in. If set to ``false``, non-player associables are members of all regions in which they are in, which means that pistons, for example, can push blocks from inside a region outwards into a surrounding region (unless there is only a protected :doc:`regions/global-region` outside). If set to ``true``, pistons, for example, cannot push blocks from inside a region outwards into a surrounding protected region with a lower priority."
 
 gameplay.*
 ~~~~~~~~~~
