@@ -90,7 +90,7 @@ Conflicting Flags
 
 Sometimes, a certain location may have multiple overlapping regions with different values for the same flag. The following rules are used to determine which values are selected:
 
-* Regions will inherit the value of a flag from its parent, **if** the region did not have the flag set. 
+* Regions will inherit the value of a flag from its parent, **if** the region did not have the flag set. (Note that the ``build`` flag is set implicitly with membership.)
 * Higher priority regions will override lower-priority regions.
 * The global region is considered like any other region, except it is at the lowest possible priority.
 
@@ -188,7 +188,7 @@ Protection-Related
     * **How do I change a flag to only affect players?** You probably mean: how do you make a flag only affect *non-members*? Well, that's easy: use :ref:`region-groups`.
 
 .. tip::
-    Note: If the ``build`` flag is set to ``allow`` or ``deny``, it can still be overriden with a different flag (``block-break``, ``interact``, etc.).
+    Note: If the ``build`` flag is set to ``allow`` or ``deny``, it can still be overriden with a different flag (``block-break``, ``interact``, etc.). The ``build`` flag is set implicitly with membership.
 
 Mobs, Fire, and Explosions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
