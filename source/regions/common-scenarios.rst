@@ -73,7 +73,7 @@ Similarly to the case above, make two regions:
 * One with ``entry=deny``.
 * Other, smaller region inside the first region, without any walls touching it, with flag ``entry=allow``. This region has to be a child of the larger region or have a higher priority.
 
-Example:
+Example::
 
     //pos1
     //pos2
