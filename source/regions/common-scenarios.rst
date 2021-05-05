@@ -65,6 +65,27 @@ Make two regions:
 * One region would have ``exit=deny``.
 * The other region would border the side of the deny region, extending a bit outside, on the sides that you want to let players exit out of. This region would have ``exit-overide=true``.
 
+How can I let players move inside a region, but deny entry and exit (like in a jail)?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Similarly to the case above, make two regions:
+
+* One with ``entry=deny``.
+* Other, smaller region inside the first region, without any walls touching it, with flag ``entry=allow``. This region has to be a child of the larger region or have a higher priority.
+
+Example:
+
+    //pos1
+    //pos2
+    /rg define larger-region
+    /rg flag larger-region entry deny
+    //inset 2
+    /rg define smaller-region
+    /rg setparent smaller-region larger-region
+    /rg flag smaller-region entry allow
+
+Players that walk/fly very fast can sometimes pass through thin regions with denied entry, so if the smaller region doesn't have an outer wall made of non-passable blocks, it's good to make the bigger region at least 2 blocks larger in every direction (like in ``//outset 2``).
+
 How do I unprotect all enchantment tables?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
