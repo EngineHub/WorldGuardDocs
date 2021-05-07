@@ -27,6 +27,11 @@ List flags by using the "flags" command::
 
 The output of this command is interactive in-game. Click flag values to change them, and the arrows at the bottom to navigate through pages.
 
+.. contents::
+    :local:
+    :backlinks: none
+    :depth: 2
+
 .. _region-groups:
 
 Region Groups
