@@ -55,7 +55,7 @@ It is **not** possible to set the same flag to different values for more than on
     When there are multiple overlapping regions, a player must be a member of the region *on which the flag is set* or *on one of the region's child regions* (when region inheritance is involved). This is explained further in :doc:`priorities`.
 
 .. tip::
-    The ``entry`` and ``exit`` flags default to "non-member", meaning setting them to "deny" will prevent non-members from entering/exiting the region. The ``teleport`` and ``spawn`` location flags default to "members", which means that only members can take advantage of them by default. All other flags provided by WorldGuard default to "everyone".
+    The ``entry`` and ``exit`` flags default to "non-member", meaning setting them to "deny" will prevent non-members from entering/exiting the region. The ``spawn`` location flag defaults to "members", which means that only members can take advantage of it by default. All other flags provided by WorldGuard default to "everyone".
 
 Types of Flags
 ==============
@@ -280,7 +280,7 @@ Movement
     teleport-message,string,The message issued to players that are teleported with ``/region teleport``
 
 .. tip::
-    As mentioned above, the ``teleport`` and ``spawn`` location flags default to "members", which means that only members can take advantage of them by default. Set the region group for the flag to change this.
+    As mentioned above, the ``spawn`` location flag defaults to "members", which means that only members can take advantage of it by default. Set the region group for the flag to change this.
 
 .. tip::
     If overlapping regions have the same ``greeting`` or ``farewell`` flag, no message is sent when moving between these regions, e.g. if you enter one region while being in the other. This is also true, in a more general sense, of any player movement that does *not* result in the flag at the "from" and "to" locations changing.
