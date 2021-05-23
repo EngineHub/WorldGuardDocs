@@ -27,6 +27,11 @@ List flags by using the "flags" command::
 
 The output of this command is interactive in-game. Click flag values to change them, and the arrows at the bottom to navigate through pages.
 
+.. contents::
+    :local:
+    :backlinks: none
+    :depth: 2
+
 .. _region-groups:
 
 Region Groups
@@ -50,7 +55,7 @@ It is **not** possible to set the same flag to different values for more than on
     When there are multiple overlapping regions, a player must be a member of the region *on which the flag is set* or *on one of the region's child regions* (when region inheritance is involved). This is explained further in :doc:`priorities`.
 
 .. tip::
-    The entry and exit flags default to "non-member", meaning setting them to "deny" will prevent non-members from entering/exiting the region. The teleport and spawn location flags default to "members", which means that only members can take advantage of them by default. All other flags provided by WorldGuard default to "everyone".
+    The ``entry`` and ``exit`` flags default to "non-member", meaning setting them to "deny" will prevent non-members from entering/exiting the region. The ``teleport`` and ``spawn`` location flags default to "members", which means that only members can take advantage of them by default. All other flags provided by WorldGuard default to "everyone".
 
 Types of Flags
 ==============
@@ -72,7 +77,7 @@ Each flag is of a certain type that determines what kind of values it may take. 
 Internally, there are more types, but it should generally not be of concern.
 
 .. tip::
-    Most string flags will accept ``\n`` as a newline (for example, to send multiple lines via greeting/farewell, or a title and subtitle via greeting-title and farewell-title).
+    Most string flags will accept ``\n`` as a newline (for example, to send multiple lines via ``greeting``/``farewell``, or a title and subtitle via ``greeting-title`` and ``farewell-title``).
 
     They may also accept color codes, either in the old style ``&[0-9a-f]`` or ```[RrYyGgCcBbPp012w]`` for dark-red, red, dark yellow, yellow, etc., and ``[&`][klmnox]`` for obfuscated, bold, strikethrough, underline, and italic text.
 
@@ -80,7 +85,7 @@ Internally, there are more types, but it should generally not be of concern.
 
 .. topic:: Example: Using string formatting options
 
-    Setting spawn's greeting-title to a fancy welcome message::
+    Setting spawn's ``greeting-title`` to a fancy welcome message::
 
         /rg flag spawn greeting-title `bWelcome to spawn!\n`YEnjoy your stay in `g`n%world%`x, `C%name%`Y!
 
@@ -90,7 +95,7 @@ Conflicting Flags
 
 Sometimes, a certain location may have multiple overlapping regions with different values for the same flag. The following rules are used to determine which values are selected:
 
-* Regions will inherit the value of a flag from its parent, **if** the region did not have the flag set. 
+* Regions will inherit the value of a flag from its parent, **if** the region did not have the flag set. (Note that the ``build`` flag is set implicitly with membership.)
 * Higher priority regions will override lower-priority regions.
 * The global region is considered like any other region, except it is at the lowest possible priority.
 
@@ -163,9 +168,10 @@ Protection-Related
     frosted-ice-form,state,Whether players with frost walker boots will form ice
     item-frame-rotation,state,Whether items can be rotated within item frames
     firework-damage,state,Whether fireworks can deal damage to entities
+    use-anvil,state,Whether anvils can be used
 
 .. warning::
-    None of these flags are player-specific. For example, the block-break flag, if set to deny, **prevents pistons from breaking blocks**.
+    None of these flags are player-specific. For example, the ``block-break`` flag, if set to deny, **prevents pistons from breaking blocks**.
 
     To understand why, consider the fact that players can fling TNT into a region from outside, or a player can build an inchworm piston machine that moves into another region. While these actions were caused by a player, realistically attempting to figure which player built the TNT cannon or used it is much more difficult. However, you still want to prevent someone from blowing up spawn with a TNT cannon.
 
@@ -188,7 +194,7 @@ Protection-Related
     * **How do I change a flag to only affect players?** You probably mean: how do you make a flag only affect *non-members*? Well, that's easy: use :ref:`region-groups`.
 
 .. tip::
-    Note: If the ``build`` flag is set to ``allow`` or ``deny``, it can still be overriden with a different flag (``block-break``, ``interact``, etc.).
+    Note: If the ``build`` flag is set to ``allow`` or ``deny``, it can still be overriden with a different flag (``block-break``, ``interact``, etc.). The ``build`` flag is set implicitly with membership.
 
 Mobs, Fire, and Explosions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -204,6 +210,7 @@ Mobs, Fire, and Explosions
     fire-spread,state,Whether fire can spread
     enderman-grief,state,Whether endermen will grief
     snowman-trails,state,Whether snowmen will create snow beneath them
+    ravager-grief,state,Whether ravagers will grief
     mob-damage,state,Whether mobs can hurt players
     mob-spawning,state,Whether mobs can spawn
     deny-spawn,set of entity types,A list of entity types that cannot spawn
@@ -270,15 +277,16 @@ Movement
     chorus-fruit-teleport,state,Whether chorus fruits can be used to teleport
     teleport,location,The location to teleport to when the ``/region teleport`` command is used with the region name
     spawn,location,The location to teleport to when a player dies within the region
+    teleport-message,string,The message issued to players that are teleported with ``/region teleport``
 
 .. tip::
-    As mentioned above, the teleport and spawn location flags default to "members", which means that only members can take advantage of them by default. Set the region group for the flag to change this.
+    As mentioned above, the ``teleport`` and ``spawn`` location flags default to "members", which means that only members can take advantage of them by default. Set the region group for the flag to change this.
 
 .. tip::
-    If overlapping regions have the same greeting or farewell flag, no message is sent when moving between these regions, e.g. if you enter one region while being in the other. This is also true, in a more general sense, of any player movement that does *not* result in the flag at the "from" and "to" locations changing.
+    If overlapping regions have the same ``greeting`` or ``farewell`` flag, no message is sent when moving between these regions, e.g. if you enter one region while being in the other. This is also true, in a more general sense, of any player movement that does *not* result in the flag at the "from" and "to" locations changing.
 
 .. warning::
-    The greeting and farewell message flags require that the "use player move event" option **not** be disabled in the :doc:`configuration <../config>`.
+    The ``greeting`` and ``farewell`` message flags require that the "use player move event" option **not** be disabled in the :doc:`configuration <../config>`.
 
 .. topic:: Example: Preventing non-members of a "secret_club" region from entering it
     

@@ -91,25 +91,24 @@ How do I unprotect all enchantment tables?
 
 In the :doc:`../config`, adjust the ``interaction-whitelist`` setting and add the enchantment table. Get the proper names that you can use from `Bukkit's Material <https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html>`_.
 
-How do I allow mining but prevent block breaking?
+How do I allow mining but prevent block placing?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Set the ``block-break`` flag to ``allow``::
 
-* /rg flag mining_area block-break allow
+    /rg flag mining_area block-break allow
 
 How do I allow players to read lectern books, but not take them?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 First, make sure you are on WorldGuard 7.0.1+. Earlier versions of WorldGuard released before 1.14 (and thus before lecterns) existed.
 
-* Set the ``interact`` flag to ``allow``: ``/rg flag <region> interact allow``
-* Set the ``chest-access`` flag to ``deny``, at least for non-members: ``/rg flag <region> chest-access -g nonmembers deny``
+* Set the ``use`` flag to ``allow``: ``/rg flag <region> use allow``
 
 How do I allow breaking of only certain block types?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Sorry, this is not supported yet!
+Sorry, this is not supported per region yet! However, this can either be done per world in whitelist mode as described in :doc:`../blacklist/index` or using :doc:`../build-perms`.
 
 Plot Setups
 ===========
@@ -178,5 +177,5 @@ Did you set the ``build`` flag? You probably do not want to do that. Be sure to 
     /rg flag __global__ passthrough deny
 
 .. warning::
-    At this time, it is not possible for a piston to push from one region into another. This issue is tracked as `WORLDGUARD-3234 <https://dev.enginehub.org/youtrack/issue/WORLDGUARD-3234>`_ on the issue tracker.
+    At this time, it is not possible for a piston to push from one region into another. This issue is tracked as `WORLDGUARD-3234 <https://github.com/EngineHub/WorldGuard/issues/1047>`_ on the issue tracker.
 

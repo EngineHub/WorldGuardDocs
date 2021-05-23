@@ -42,16 +42,19 @@ Adding Members
 
 Due to legacy reasons, adding owners or members to the global region implicitly sets ``passthrough`` to deny. That means that you do not have to actually change the flag, although it is recommended anyway.
 
+Non-Player Associables
+~~~~~~~~~~~~~~~~~~~~~~
+
+Non-player associables, such as pistons, are usually members of either all regions in which they are in or only of the regions with the highest priorities in which they are in, depending on the ``use-max-priority-association`` :doc:`../config` setting. However, non-player associables are no longer members of the global region if they are in at least one other region. This means that pistons, for example, cannot push blocks from inside a region into a protected global region. Thus the global region always behaves as if ``use-max-priority-association`` is set to ``true``.
+
 Build Flag
 ~~~~~~~~~~
 
-The ``build`` flag **cannot** be set to ``allow`` as there should be no reason to and it essentially breaks all regions by default. Setting the flag to ``deny`` works like it does with any other region, but be aware that setting ``build`` to deny on any region essentially means that *nothing* can break or place blocks, therefore breaking things like pistons. Since the global region encompasses the entire world, it would break all pistons.
+Setting the ``build`` flag to ``allow`` has **no** effect as there should be no reason to. Setting the flag to ``deny`` works like it does with any other region, but be aware that setting ``build`` to deny on any region essentially means that *nothing* can break or place blocks, therefore breaking things like pistons. Since the global region encompasses the entire world, it would break all pistons that are not within another region.
 
 .. warning::
 
-    Setting the ``build`` flag on the global region is strongly discouraged. If you want to protect the world by default, set the ``passthrough`` flag. If you set the build flag on the global region, other regions will **not** override the flag unless the other region also has ``build`` set to something.
-
-    Thus, setting ``build`` to ``deny`` on the global region prevents people from building at all in regions that they own or are a member of.
+    Setting the ``build`` flag on the global region is strongly discouraged. If you want to protect the world by default, set the ``passthrough`` flag.
 
 Overriding Defaults
 ===================
