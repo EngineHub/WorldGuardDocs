@@ -128,6 +128,9 @@ Overrides
 
     * When you are using other flags (PvP, healing, etc.) and you don't want to prevent building.
     * Why not set ``build`` to ``allow`` (explained later) instead? That would override other regions and let people build!"
+    nonplayer-protection-domains,set of strings,"Non-player associables, such as pistons, are usually members of either all regions in which they are in or only of the regions with the highest priorities in which they are in, depending on the ``use-max-priority-association`` :doc:`../config` setting and if it is a :doc:`global-region`. Thus there can be borders between regions, such that pistons cannot move blocks from one region into another region.
+
+    The borders between the regions can be removed for non-player associables by setting the ``nonplayer-protection-domains`` flags of these regions. This flag is a set of strings, describing the domains to which the region belongs. If a non-player associable is a member of a region, then it is also a member of another region, if there is at least one domain to which both regions belong to."
 
 Protection-Related
 ~~~~~~~~~~~~~~~~~~

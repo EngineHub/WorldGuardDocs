@@ -47,6 +47,8 @@ Non-Player Associables
 
 Non-player associables, such as pistons, are usually members of either all regions in which they are in or only of the regions with the highest priorities in which they are in, depending on the ``use-max-priority-association`` :doc:`../config` setting. However, non-player associables are no longer members of the global region if they are in at least one other region. This means that pistons, for example, cannot push blocks from inside a region into a protected global region. Thus the global region always behaves as if ``use-max-priority-association`` is set to ``true``.
 
+The membership of non-player associables can additionally be adjusted by setting the ``nonplayer-protection-domains`` flags of the regions. However, this flag works differently on the global region. If there is at least one domain to which a normal region and the global region belong to, this implies that non-player associables that are members of the normal region, will also be members of the global region but **not** vice versa.
+
 Build Flag
 ~~~~~~~~~~
 
