@@ -10,7 +10,7 @@ Priorities
 Every region defaults to a priority of 0, but it can be adjusted to be positive or negative. Higher numbers imply higher priorities. The valid range of priorities is -2147483648 to 2147483647, inclusive, but you will probably use more reasonable numbers like -2, 10, 15, or 100.
 
 * In terms of membership and who can build: When a certain location has overlapping regions, only the regions of the highest priority are considered.
-* In terms of :doc:`region flags <flags>`, the highest priority region with the flag defined is used.
+* In terms of :doc:`region flags <flags>`, the highest priority region with the flag defined (for the subject's associated region group) is used.
 
 Priorities can be set with ``/rg setpriority``::
 
@@ -56,7 +56,7 @@ Following from the pub example above, what if you want to allow *both* builders 
 When a region is given a parent:
 
 * It inherits the parent's members and owners
-* It inherits the parent's flags *if* if the flag isn't defined on the child region
+* It inherits the parent's flags *if* if the flag isn't defined on the child region (for the subject's associated region group, determined by the regions in the inheritance chain up to the child region)
 
 This comes in handy for:
 

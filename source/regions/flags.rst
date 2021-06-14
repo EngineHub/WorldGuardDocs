@@ -95,7 +95,7 @@ Conflicting Flags
 
 Sometimes, a certain location may have multiple overlapping regions with different values for the same flag. The following rules are used to determine which values are selected:
 
-* Regions will inherit the value of a flag from its parent, **if** the region did not have the flag set. (Note that the ``build`` flag is set implicitly with membership.)
+* Regions will inherit the value of a flag from its parent, **if** the region did not have the flag set (for the subject's associated region group, determined by the regions in the inheritance chain up to the region). (Note that the ``build`` flag is set implicitly with membership.)
 * Higher priority regions will override lower-priority regions.
 * The global region is considered like any other region, except it is at the lowest possible priority.
 
@@ -104,7 +104,7 @@ However, it is still possible for there to be conflicting flag values even after
 * For state flags, if ``deny`` is present, the result is ``deny``. Otherwise, if ``allow`` is present, then the final value is ``allow``.
 * For other flags, the result is not defined. For that reason, do not, for example, set two different greeting messages in the same area with the same priority.
 
-If a flag is not defined at all, then the default behavior is whichever is most sensible. For example, if "item pickup" is not defined, WorldGuard defaults to allowing it.
+If a flag is not defined at all (for the subject's associated region group), then the default behavior is whichever is most sensible. For example, if "item pickup" is not defined, WorldGuard defaults to allowing it.
 
 Flag Listing
 ============
