@@ -24,7 +24,7 @@ However, unlike normal regions, the ``passthrough`` :doc:`region flag <flags>` i
 Changing ``passthrough``
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you change the ``passthrough`` :doc:`flag <flags>` to deny, making the global region act like a regular region, players must be owners or members of the global region in order to build in it. Because the global reason encompasses the entire world, that means building is denied by default.
+If you change the ``passthrough`` :doc:`flag <flags>` to deny, making the global region act like a regular region, players must be owners or members of the global region in order to build in it. Because the global region encompasses the entire world, that means building is denied by default.
 
 Because the global region is considered the lowest priority region, any other normal regions made will override the global region and thus allow building if a player is a member of that region.
 
