@@ -158,4 +158,7 @@ For example, if there are two regions:
 Is sk89q a member? Yes, so sk89q is allowed to PvP.
 
 .. note::
+    Inheritance also works for the region membership of non-player associables, such as pistons. Child regions inherit non-player members from their parent region. For more precise information about how region membership of non-player associables works, take a look the ``use-max-priority-association`` :doc:`../config` setting.
+
+.. note::
     As mentioned previously, parent regions should **not** have a higher priority than their children, otherwise this will not work correctly. PvP would be denied for sk89q because the parent region would override the child.
