@@ -38,7 +38,6 @@ See the :doc:`commands` page for an explanation of some of these commands.
     worldguard.locate,"Be able to use ``/locate``."
     worldguard.stack,"Be able to use ``/stack``."
     worldguard.stack.illegitimate,"Be able to make stack sizes with ``/stack`` that exceed normal limits (i.e. 64 buckets in one stack)."
-    worldguard.stack.damaged,"Be able to ``/stack`` items that should not be stacked because they use their value for storing other data."
     worldguard.fire-toggle.stop,"Be able to use ``/stopfire`` and ``/allowfire``."
     worldguard.halt-activity,"Be able to use ``/stoplag``."
     worldguard.reload,"Be able to use ``/wg reload``."
