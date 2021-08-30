@@ -70,7 +70,7 @@ Regions
 Per-Region Commands
 ~~~~~~~~~~~~~~~~~~~
 
-The following commands support a base permission (such as ``worldguard.region.redefine``), but also allow you to use specific permissions that only apply if a player is an owner or member of a region:
+The following commands support a base permission (such as ``worldguard.region.redefine``), but also allow you to use specific permissions that only apply if a player is an owner or member of a region (note that an owner is also a member):
 
 * ``worldguard.region.redefine.own.<region name>``
 * ``worldguard.region.redefine.member.<region name>``
@@ -123,9 +123,13 @@ However, rather than providing that encompassing permission, you can provide the
     * ``worldguard.region.flag.regions.member.<region name>``
     * ``worldguard.region.flag.regions.<region name>``
 
-* However, to determine *which types of flags* can be set by the player, permissions of the following pattern can be given:
+* However, to determine *which types of flags* can be set by the player, permissions of the following patterns can be given:
 
-    * ``worldguard.region.flag.flags.<flag name>.<region name>.<flag value>``
+    * ``worldguard.region.flag.flags.<flag name>.<flag value>.own.<region name>``
+    * ``worldguard.region.flag.flags.<flag name>.<flag value>.member.<region name>``
+    * ``worldguard.region.flag.flags.<flag name>.<flag value>.<region name>``
+
+  Examples for ``<flag value>`` are ``allow``, ``deny``, ``unset`` (if no value is specified), etc. More complex values are also checked, however, special characters such as ``,``, ``.``, whitespaces, etc. are omitted.
 
 .. topic:: Example: Letting players be able to only change flags on regions that they own, and limit the flags that they can change to ``use`` and ``chest-access``
 
