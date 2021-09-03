@@ -172,6 +172,7 @@ Protection-Related
     item-frame-rotation,state,Whether items can be rotated within item frames
     firework-damage,state,Whether fireworks can deal damage to entities
     use-anvil,state,Whether anvils can be used
+    use-dripleaf,state,Whether dripleaf can be used
 
 .. warning::
     None of these flags are player-specific. For example, the ``block-break`` flag, if set to deny, **prevents pistons from breaking blocks**.
