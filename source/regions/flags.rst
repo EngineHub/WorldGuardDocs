@@ -55,7 +55,7 @@ It is **not** possible to set the same flag to different values for more than on
     When there are multiple overlapping regions, a player must be a member of the region *on which the flag is set* or *on one of the region's child regions* (when region inheritance is involved). This is explained further in :doc:`priorities`.
 
 .. tip::
-    The ``entry`` and ``exit`` flags default to "non-member", meaning setting them to "deny" will prevent non-members from entering/exiting the region. The ``spawn`` location flag defaults to "members", which means that only members can take advantage of it by default. All other flags provided by WorldGuard default to "everyone".
+    The ``entry`` and ``exit`` flags default to "non-member", meaning setting them to "deny" will prevent non-members from entering/exiting the region. The ``spawn`` location flag defaults to "members", which means that only members can take advantage of it by default. The ``nonplayer-protection-domains`` flag has no region group. All other flags provided by WorldGuard default to "everyone".
 
 Types of Flags
 ==============
