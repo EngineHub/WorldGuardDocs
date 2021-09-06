@@ -89,7 +89,6 @@ Internally, there are more types, but it should generally not be of concern.
 
         /rg flag spawn greeting-title `bWelcome to spawn!\n`YEnjoy your stay in `g`n%world%`x, `C%name%`Y!
 
-
 Conflicting Flags
 =================
 
@@ -104,7 +103,13 @@ However, it is still possible for there to be conflicting flag values even after
 * For state flags, if ``deny`` is present, the result is ``deny``. Otherwise, if ``allow`` is present, then the final value is ``allow``.
 * For other flags, the result is not defined. For that reason, do not, for example, set two different greeting messages in the same area with the same priority.
 
-If a flag is not defined at all, then the default behavior is whichever is most sensible. For example, if "item pickup" is not defined, WorldGuard defaults to allowing it.
+Default Values of Flags
+=======================
+
+Flags can have default values, which are used if a flag is not set for the subject's region group on any region that affects the action. The default behavior is whichever is most sensible. For example, if ``item-pickup`` is not defined, WorldGuard defaults to allowing it. You can view the default values ingame by using the "flags" command as already described above. State flags can either be allowed by default, or have no default value. A rule of thumb is that protection-related flags, as listed below, have no default value, except for the ``build`` flag. All other state flags are usually allowed by default. The ``build`` flag is special. Its default value depends on the region membership of the subject and it's always set implicitely, if it's not set explicitely on any highest priority region that affects an action. That's the reason why members and owners can build and non-members can't by default. All other protection-related flags are always checked in tandem with the build flag. Thus their default behavior is the resulting value of the build flag.
+
+.. tip::
+    Most of the time you don't need to set any flags. You should only set flags if you want to deviate from the default values or to overwrite set flags of other regions. Specifically don't set protection-related flags to completely protect or unprotect a region. Use membership or the ``passthrough`` flag instead.
 
 Flag Listing
 ============
