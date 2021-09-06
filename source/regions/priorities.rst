@@ -90,6 +90,9 @@ WorldGuard will detect circular inheritance and prevent it.
 
         /rg addowner plot1 sk89q
 
+.. note::
+    Non-player associables, such as pistons, can also be members of regions. Member inheritance is not limited to players only. This means that pistons in parent regions, for example, can push blocks into their children.
+
 Template Regions
 ~~~~~~~~~~~~~~~~
 
