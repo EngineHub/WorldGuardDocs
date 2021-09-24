@@ -112,19 +112,24 @@ As you may be aware, you cannot add entities or blocks as members to a region, s
     Set inside        = newHashSet(spawn);
     Set outside       = newHashSet(); // Empty set
 
-    // outside -> inside = BLOCKED
+    // outside -> inside = considered as "non-member"
     new RegionOverlapAssociation(outside).getAssociation(inside) == NON_MEMBER
 
-    // inside -> inside = ALLOWED
-    new RegionOverlapAssociation(inside).getAssociation(inside) == MEMBER
+    // inside -> inside = considered as "member"
+    new RegionOverlapAssociation(inside).getAssociation(inside) == OWNER
 
-    // inside -> deepInside = BLOCKED
-    new RegionOverlapAssociation(inside).getAssociation(deepInside) == NON_MEMBER
+    // inside -> deepInside = considered as "member"
+    // Note that by default building is blocked in this case.
+    // The association must be at least "member" for all regions individually.
+    new RegionOverlapAssociation(inside).getAssociation(deepInside) == OWNER
 
-    // inside -> outside = ALLOWED
-    new RegionOverlapAssociation(inside).getAssociation(outside) == MEMBER
+    // inside -> outside = considered as "non-member"
+    new RegionOverlapAssociation(inside).getAssociation(outside) == NON_MEMBER
 
-Note that the ``nonplayer-protection-domains`` flag can override this behavior. The various ``test...`` and ``query...`` methods will handle this for you.
+    // deepInside -> inside = considered as "member"
+    new RegionOverlapAssociation(deepInside).getAssociation(inside) == OWNER
+
+Note that the ``nonplayer-protection-domains`` flag and region inheritance can override this behavior. The various ``test...`` and ``query...`` methods will handle this for you.
 
 To summarize:
 
