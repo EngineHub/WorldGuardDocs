@@ -138,7 +138,7 @@ To summarize:
 
 There is also:
 
-* ``ConstantAssociation`` uses a pre-set type of association (``new ConstantAssociation(Association.MEMBER)``)
+* ``ConstantAssociation`` uses a pre-set type of association (``new ConstantAssociation(Association.MEMBER)`` or ``Associables.constant(Association.MEMBER)``)
 * ``DelayedRegionOverlapAssociation`` which works like ``RegionOverlapAssociation``, but doesn't do the spatial query for regions at the source until it is needed
 
 .. topic:: Example: Examining how WorldGuard handles region protection
@@ -150,12 +150,16 @@ There is also:
         private RegionAssociable createRegionAssociable(Object cause) {
             if (cause instanceof Player) {
                 return WorldGuardPlugin.inst().wrapPlayer((Player) cause);
-            } else if (cause instanceof Entity) {
+            } else if (cause instanceof Entity entity) {
                 RegionQuery query = WorldGuard.getInstance().getPlatform().getRegionContainer().createQuery();
-                return new DelayedRegionOverlapAssociation(query, ((Entity) cause).getLocation());
-            } else if (cause instanceof Block) {
+                WorldConfiguration config = WorldGuard.getInstance().getPlatform().getGlobalStateManager().get(BukkitAdapter.adapt(entity.getWorld()));
+                Location loc = entity.getLocation(); // getOrigin() can be used on Paper if present
+                return new DelayedRegionOverlapAssociation(query, BukkitAdapter.adapt(loc), config.useMaxPriorityAssociation);
+            } else if (cause instanceof Block block) {
                 RegionQuery query = WorldGuard.getInstance().getPlatform().getRegionContainer().createQuery();
-                return new DelayedRegionOverlapAssociation(query, ((Block) cause).getLocation());
+                WorldConfiguration config = WorldGuard.getInstance().getPlatform().getGlobalStateManager().get(BukkitAdapter.adapt(block.getWorld()));
+                Location loc = block.getLocation();
+                return new DelayedRegionOverlapAssociation(query, BukkitAdapter.adapt(loc), config.useMaxPriorityAssociation);
             } else {
                 return Associables.constant(Association.NON_MEMBER);
             }
@@ -168,7 +172,7 @@ There is also:
         @EventHandler
         public void onPlayerBucketFill(PlayerBucketFillEvent event) {
             Player player = event.getPlayer();
-            RegionAssociable associable = createRegionAssociable(WorldGuardPlugin.inst().wrapPlayer(player));
+            RegionAssociable associable = createRegionAssociable(player);
 
             if (!set.testState(associable, /* flags here */)) {
                 event.setCancelled(true);
