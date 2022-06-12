@@ -277,6 +277,8 @@ dynamics.*
     disable-grass-growth,FALSE,"Whether the growth of grass should be disabled."
     disable-mycelium-spread,FALSE,"Whether the spread of mycelium should be disabled."
     disable-vine-growth,FALSE,"Whether the growth of vines and kelp should be disabled."
+    disable-rock-growth,FALSE,"Whether the growth of rocks such as dripstones should be disabled."
+    disable-sculk-growth,FALSE,"Whether the growth of sculk should be disabled."
     disable-crop-growth,FALSE,"Whether the growth of wheat, carrots, melons, etc should be disabled."
     disable-soil-dehydration,FALSE,"Whether the dehydration of soil should be disabled."
     disable-coral-block-fade,FALSE,"Whether coral should remain alive when not in water."

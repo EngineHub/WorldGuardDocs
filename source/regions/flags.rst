@@ -238,6 +238,8 @@ Natural Events
     grass-growth,state,Whether grass will grow
     mycelium-spread,state,Whether mycelium will spread
     vine-growth,state,Whether vines (and kelp) will grow
+    rock-growth,state,"Whether rocks (dripstone, etc) will grow"
+    sculk-growth,state,"Whether sculk (sculk and sculk vines) will grow"
     crop-growth,state,"Whether crops (wheat, potatoes, melons, etc) will grow"
     soil-dry,state,Whether soil will dry
     coral-fade,state,Whether coral will die when not in water.
