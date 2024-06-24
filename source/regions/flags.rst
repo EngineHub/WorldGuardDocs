@@ -27,6 +27,9 @@ List flags by using the "flags" command::
 
 The output of this command is interactive in-game. Click flag values to change them, and the arrows at the bottom to navigate through pages.
 
+.. tip::
+For some of the flags, if a player is inside the region when a flag is set, it won't take effect for that player until they leave the region and enter again, or rejoin the game. E.g. if you'd set the ``invincible`` flag to ``allow`` while being in the region, you would still take damage.
+
 .. contents::
     :local:
     :backlinks: none
