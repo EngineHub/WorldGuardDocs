@@ -192,7 +192,7 @@ List
 
 .. code-block:: text
 
-    /rg list [-i <id search>] [-p <player>] [-w <world>] [<page>]
+    /rg list [-i <id search>] [-p <player>] [-w <world>] [-s] [<page>]
 
 Lists the regions that have been created. A number can be provided to show a certain page.
 
